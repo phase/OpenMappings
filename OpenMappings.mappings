@@ -1,0 +1,1278 @@
+CLASS none/a net/minecraft/util/TextFormat
+	FIELD B str Ljava/lang/String;
+	FIELD C name I
+	FIELD a BLACK Lnone/a;
+	FIELD b DARK_BLUE Lnone/a;
+	FIELD c DARK_GREEN Lnone/a;
+	FIELD d DARK_AQUA Lnone/a;
+	FIELD e DARK_RED Lnone/a;
+	FIELD f DARK_PURPLE Lnone/a;
+	FIELD g GOLD Lnone/a;
+	FIELD h GRAY Lnone/a;
+	FIELD i DARK_GREY Lnone/a;
+	FIELD j BLUE Lnone/a;
+	FIELD k GREEN Lnone/a;
+	FIELD l AQUA Lnone/a;
+	FIELD m RED Lnone/a;
+	FIELD n LIGHT_PURPLE Lnone/a;
+	FIELD o YELLOW Lnone/a;
+	FIELD p WHITE Lnone/a;
+	FIELD q OBFUSCATED Lnone/a;
+	FIELD r BOLD Lnone/a;
+	FIELD s STRIKETHROUGH Lnone/a;
+	FIELD t UNDERLINE Lnone/a;
+	FIELD u ITALIC Lnone/a;
+	FIELD v RESET Lnone/a;
+	FIELD w IDENTIFIERS Ljava/util/Map;
+	FIELD x MATCHER Ljava/util/regex/Pattern;
+	METHOD <init> (Ljava/lang/String;ILjava/lang/String;CI)V
+		ARG 3 name
+	METHOD <init> (Ljava/lang/String;ILjava/lang/String;CZ)V
+		ARG 3 name
+	METHOD <init> (Ljava/lang/String;ILjava/lang/String;CZI)V
+		ARG 3 name
+CLASS none/b net/minecraft/crash/CrashReport
+	FIELD a LOGGER Lorg/apache/logging/log4j/Logger;
+	FIELD c cause Ljava/lang/Throwable;
+	FIELD h stackTrace [Ljava/lang/StackTraceElement;
+	METHOD <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+		ARG 1 cause
+CLASS none/c net/minecraft/crash/CrashReportElement
+	CLASS none/c$a Element
+		FIELD a name Ljava/lang/String;
+		FIELD b value Ljava/lang/String;
+		METHOD <init> (Ljava/lang/String;Ljava/lang/Object;)V
+			ARG 0 name
+		METHOD a getName ()Ljava/lang/String;
+		METHOD b getValue ()Ljava/lang/String;
+	FIELD a report Lnone/b;
+	FIELD b name Ljava/lang/String;
+	FIELD c elements Ljava/util/List;
+	FIELD d stackTrace [Ljava/lang/StackTraceElement;
+	METHOD <init> (Lnone/b;Ljava/lang/String;)V
+		ARG 0 report
+		ARG 1 name
+CLASS none/h net/minecraft/util/Utilities
+	CLASS none/h$a OS
+		FIELD a LINUX Lnone/h$a;
+		FIELD b SOLARIS Lnone/h$a;
+		FIELD c WINDOWS Lnone/h$a;
+		FIELD d MACOS Lnone/h$a;
+		FIELD e UNKNOWN Lnone/h$a;
+	METHOD a getOperatingSystem ()Lnone/h$a;
+	METHOD a getLast (Ljava/util/List;)Ljava/lang/Object;
+		ARG 0 list
+	METHOD a runTask (Ljava/util/concurrent/FutureTask;Lorg/apache/logging/log4j/Logger;)Ljava/lang/Object;
+		ARG 0 task
+		ARG 1 logger
+CLASS none/j net/minecraft/command/Command
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a (Lcom/google/gson/JsonParseException;)Lnone/cf;
+		ARG 0 ex
+	METHOD a (Lnet/minecraft/server/MinecraftServer;Lnone/n;)Z
+		ARG 0 server
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD a ([Ljava/lang/String;[Ljava/lang/String;)Ljava/util/List;
+	METHOD b getAliases ()Ljava/util/List;
+CLASS none/l net/minecraft/command/ICommand
+	METHOD a (Lnet/minecraft/server/MinecraftServer;Lnone/n;)Z
+		ARG 0 server
+		ARG 1 user
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+		ARG 0 server
+		ARG 1 user
+		ARG 2 args
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+		ARG 0 server
+		ARG 1 user
+		ARG 2 args
+	METHOD b getAliases ()Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+		ARG 0 user
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/n net/minecraft/command/ICommandUser
+CLASS none/o
+	METHOD a (Lnet/minecraft/server/MinecraftServer;Lnone/n;Lnone/o$a;I)V
+		ARG 0 server
+		ARG 1 user
+CLASS none/p
+	METHOD b (Lnone/n;Ljava/lang/String;)Lnone/ey;
+		ARG 0 user
+CLASS none/q
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/r net/minecraft/command/CommandBanIP
+	FIELD a IP_MATCHER Ljava/util/regex/Pattern;
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a (Lnet/minecraft/server/MinecraftServer;Lnone/n;)Z
+		ARG 0 server
+		ARG 1 user
+	METHOD a (Lnet/minecraft/server/MinecraftServer;Lnone/n;Ljava/lang/String;Ljava/lang/String;)V
+		ARG 0 server
+		ARG 1 user
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+		ARG 0 server
+		ARG 1 user
+		ARG 2 args
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+		ARG 0 server
+		ARG 1 user
+		ARG 2 args
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+		ARG 0 user
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/s net/minecraft/command/CommandBase
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+		ARG 0 user
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/t
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/u
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/v
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/w net/minecraft/command/CommandTestForBlocks
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+		ARG 0 server
+		ARG 1 user
+		ARG 2 args
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+		ARG 0 server
+		ARG 1 user
+		ARG 2 args
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+		ARG 0 user
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/x
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/y
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/z
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+		ARG 0 server
+		ARG 1 user
+		ARG 2 args
+	METHOD a (Lnone/aib;Lnet/minecraft/server/MinecraftServer;)V
+		ARG 1 server
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+		ARG 0 user
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/aa
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ab
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ac
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ad
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ae
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/af
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ag
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ah
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ai
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/aj
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ak
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/al
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getAliases ()Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/am
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/an
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ao
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ap
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/aq
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getAliases ()Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ar
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/as
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/at
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/au
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/av
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/aw
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ax
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ay
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/az
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ba
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bb
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bc
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/be
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bf
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bg
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bh
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bi
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bj net/minecraft/command/CommandSpreadPlayers
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+		ARG 0 server
+		ARG 1 user
+		ARG 2 args
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD a (Lnone/n;Ljava/util/List;Lnone/bj$a;DDLnone/aid;Z)V
+		ARG 0 user
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+		ARG 0 user
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bk
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bl
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bm
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bn
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bo
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bp
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/br
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bs
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bt net/minecraft/command/CommandTime
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a (Lnet/minecraft/server/MinecraftServer;I)V
+		ARG 0 server
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+		ARG 0 server
+		ARG 1 user
+		ARG 2 args
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+		ARG 0 server
+		ARG 1 user
+		ARG 2 args
+	METHOD b (Lnet/minecraft/server/MinecraftServer;I)V
+		ARG 0 server
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+		ARG 0 user
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bu
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bv
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bw
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bx
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/by
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bz
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ca
+	METHOD a getMinimumPermissionLevel ()I
+	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
+	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
+	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/cc net/minecraft/command/CommandException
+	METHOD <init> (Ljava/lang/String;[Ljava/lang/Object;)V
+		ARG 0 message
+CLASS none/cf net/minecraft/command/CommandSyntaxException
+	METHOD <init> (Ljava/lang/String;[Ljava/lang/Object;)V
+		ARG 0 message
+CLASS none/ci net/minecraft/command/CommandUsageException
+	METHOD <init> (Ljava/lang/String;[Ljava/lang/Object;)V
+		ARG 0 args
+CLASS none/cr net/minecraft/registry/DefaultedMappedRegistry
+	FIELD d defaultKey Ljava/lang/Object;
+	FIELD e defaultValue Ljava/lang/Object;
+	METHOD a get (I)Ljava/lang/Object;
+		ARG 0 id
+	METHOD a getID (Ljava/lang/Object;)I
+		ARG 0 value
+	METHOD a getRandom (Ljava/util/Random;)Ljava/lang/Object;
+		ARG 0 rand
+	METHOD b getKey (Ljava/lang/Object;)Ljava/lang/Object;
+		ARG 0 value
+	METHOD c get (Ljava/lang/Object;)Ljava/lang/Object;
+		ARG 0 key
+CLASS none/cs
+	METHOD c get (Ljava/lang/Object;)Ljava/lang/Object;
+CLASS none/cv net/minecraft/util/Iterable
+CLASS none/da net/minecraft/registry/BiRegistry
+	FIELD b map Ljava/util/Map;
+	METHOD a get (I)Ljava/lang/Object;
+		ARG 0 id
+	METHOD a getID (Ljava/lang/Object;)I
+		ARG 0 value
+	METHOD b createMap ()Ljava/util/Map;
+	METHOD b getKey (Ljava/lang/Object;)Ljava/lang/Object;
+		ARG 0 value
+	METHOD c get (Ljava/lang/Object;)Ljava/lang/Object;
+		ARG 0 key
+	METHOD d contains (Ljava/lang/Object;)Z
+		ARG 0 key
+	METHOD iterator iterator ()Ljava/util/Iterator;
+CLASS none/de net/minecraft/registry/IRegistry
+	METHOD a put (Ljava/lang/Object;Ljava/lang/Object;)V
+		ARG 0 key
+		ARG 1 value
+	METHOD c getKeys ()Ljava/util/Set;
+	METHOD c get (Ljava/lang/Object;)Ljava/lang/Object;
+		ARG 0 key
+CLASS none/dg net/minecraft/registry/Registry
+	FIELD a LOGGER Lorg/apache/logging/log4j/Logger;
+	FIELD b values [Ljava/lang/Object;
+	FIELD c map Ljava/util/Map;
+	METHOD a put (Ljava/lang/Object;Ljava/lang/Object;)V
+		ARG 0 key
+		ARG 1 value
+	METHOD a getRandom (Ljava/util/Random;)Ljava/lang/Object;
+		ARG 0 rand
+	METHOD b createMap ()Ljava/util/Map;
+	METHOD c getKeys ()Ljava/util/Set;
+	METHOD c get (Ljava/lang/Object;)Ljava/lang/Object;
+		ARG 0 key
+	METHOD d contains (Ljava/lang/Object;)Z
+		ARG 0 key
+	METHOD iterator iterator ()Ljava/util/Iterator;
+CLASS none/dp
+	METHOD a getType ()B
+CLASS none/dq
+	METHOD a getType ()B
+CLASS none/dr net/minecraft/nbt/TagCompound
+	FIELD b map Ljava/util/Map;
+	METHOD a getType ()B
+	METHOD a read (BLjava/lang/String;Ljava/io/DataInput;ILnone/dz;)Lnone/ef;
+		ARG 2 input
+	METHOD a (Ljava/io/DataInput;ILnone/dz;)V
+		ARG 0 input
+	METHOD a getUUID (Ljava/lang/String;)Ljava/util/UUID;
+		ARG 0 name
+	METHOD a setByte (Ljava/lang/String;B)V
+		ARG 0 name
+		ARG 1 val
+	METHOD a setDouble (Ljava/lang/String;D)V
+		ARG 0 name
+		ARG 1 val
+	METHOD a setFloat (Ljava/lang/String;F)V
+		ARG 0 name
+		ARG 1 val
+	METHOD a setInt (Ljava/lang/String;I)V
+		ARG 0 name
+		ARG 1 val
+	METHOD a createCrashReport (Ljava/lang/String;ILjava/lang/ClassCastException;)Lnone/b;
+		ARG 0 name
+		ARG 1 expectedType
+		ARG 2 ex
+	METHOD a setLong (Ljava/lang/String;J)V
+		ARG 0 name
+		ARG 1 val
+	METHOD a setString (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 0 name
+		ARG 1 val
+	METHOD a setUUID (Ljava/lang/String;Ljava/util/UUID;)V
+		ARG 0 name
+		ARG 1 uuid
+	METHOD a write (Ljava/lang/String;Lnone/ef;Ljava/io/DataOutput;)V
+		ARG 2 output
+	METHOD a setShort (Ljava/lang/String;S)V
+		ARG 0 name
+		ARG 1 val
+	METHOD a setBoolean (Ljava/lang/String;Z)V
+		ARG 0 name
+		ARG 1 val
+	METHOD a setByteArray (Ljava/lang/String;[B)V
+		ARG 0 name
+		ARG 1 val
+	METHOD a setIntArray (Ljava/lang/String;[I)V
+		ARG 0 name
+		ARG 1 val
+	METHOD b hasUUID (Ljava/lang/String;)Z
+		ARG 0 name
+	METHOD b hasTag (Ljava/lang/String;I)Z
+		ARG 0 name
+		ARG 1 type
+	METHOD b_ isEmpty ()Z
+	METHOD c getKeys ()Ljava/util/Set;
+	METHOD c (Ljava/lang/String;)Lnone/ef;
+		ARG 0 name
+	METHOD d getSize ()I
+	METHOD d getType (Ljava/lang/String;)B
+		ARG 0 name
+	METHOD e hasTag (Ljava/lang/String;)Z
+		ARG 0 name
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 0 other
+	METHOD f getByte (Ljava/lang/String;)B
+		ARG 0 name
+	METHOD g getShort (Ljava/lang/String;)S
+		ARG 0 name
+	METHOD h getInt (Ljava/lang/String;)I
+		ARG 0 name
+	METHOD i getLong (Ljava/lang/String;)J
+		ARG 0 name
+	METHOD j getFloat (Ljava/lang/String;)F
+		ARG 0 name
+	METHOD l getString (Ljava/lang/String;)Ljava/lang/String;
+	METHOD m getByteArray (Ljava/lang/String;)[B
+		ARG 0 name
+	METHOD n getIntArray (Ljava/lang/String;)[I
+		ARG 0 name
+	METHOD o getTagCompound (Ljava/lang/String;)Lnone/dr;
+		ARG 0 name
+	METHOD p getBoolean (Ljava/lang/String;)Z
+		ARG 0 name
+	METHOD q remove (Ljava/lang/String;)V
+		ARG 0 name
+CLASS none/ds
+	METHOD a getType ()B
+CLASS none/dt
+	METHOD a getType ()B
+CLASS none/du
+	METHOD a getType ()B
+CLASS none/dv
+	METHOD a getType ()B
+CLASS none/dw
+	METHOD a getType ()B
+CLASS none/dx
+	METHOD a getType ()B
+	METHOD b_ isEmpty ()Z
+CLASS none/dy
+	METHOD a getType ()B
+CLASS none/ed
+	METHOD a getType ()B
+CLASS none/ee
+	METHOD a getType ()B
+	METHOD b_ isEmpty ()Z
+CLASS none/ef
+	METHOD a getType ()B
+	METHOD b_ isEmpty ()Z
+CLASS none/kn net/minecraft/util/Identifier
+	FIELD a domain Ljava/lang/String;
+	FIELD b name Ljava/lang/String;
+	METHOD <init> (I[Ljava/lang/String;)V
+		ARG 1 bits
+	METHOD <init> (Ljava/lang/String;)V
+		ARG 0 name
+	METHOD <init> (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 0 domain
+		ARG 1 name
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a split (Ljava/lang/String;)[Ljava/lang/String;
+		ARG 0 s
+	METHOD b getDomain ()Ljava/lang/String;
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 0 other
+CLASS none/od
+	METHOD iterator iterator ()Ljava/util/Iterator;
+CLASS none/qb
+	FIELD a LOGGER Lorg/apache/logging/log4j/Logger;
+CLASS none/yy
+	FIELD bx anger I
+	METHOD a (Lnone/dr;)V
+		ARG 0 tag
+CLASS none/za
+	FIELD j LOGGER Lorg/apache/logging/log4j/Logger;
+CLASS none/acf net/minecraft/item/ItemArmor
+CLASS none/acg net/minecraft/item/ItemArmorStand
+CLASS none/acq net/minecraft/item/ItemBow
+CLASS none/adh net/minecraft/item/ItemEmptyMap
+CLASS none/adi net/minecraft/item/ItemEnchantedBook
+CLASS none/adr net/minecraft/item/ItemFishingRod
+CLASS none/adx net/minecraft/item/Item
+	FIELD g REGISTRY Lnone/da;
+CLASS none/adz net/minecraft/item/ItemStack
+CLASS none/aeb net/minecraft/item/Items
+	FIELD A STICK Lnone/adx;
+	FIELD B BOWL Lnone/adx;
+	FIELD C MUSHROOM_STEW Lnone/adx;
+	FIELD D GOLDEN_SWORD Lnone/adx;
+	FIELD E GOLDEN_SHOVEL Lnone/adx;
+	FIELD F GOLDEN_PICKAXE Lnone/adx;
+	FIELD G GOLDEN_AXE Lnone/adx;
+	FIELD H STRING Lnone/adx;
+	FIELD I FEATHER Lnone/adx;
+	FIELD J GUNPOWDER Lnone/adx;
+	FIELD K WOODEN_HOE Lnone/adx;
+	FIELD L STONE_HOE Lnone/adx;
+	FIELD M IRON_HOE Lnone/adx;
+	FIELD N DIAMOND_HOE Lnone/adx;
+	FIELD O GOLDEN_HOE Lnone/adx;
+	FIELD P WHEAT_SEEDS Lnone/adx;
+	FIELD Q WHEAT Lnone/adx;
+	FIELD R BREAD Lnone/adx;
+	FIELD S LEATHER_HELMET Lnone/acf;
+	FIELD T LEATHER_CHESTPLATE Lnone/acf;
+	FIELD U LEATHER_LEGGINGS Lnone/acf;
+	FIELD V LEATHER_BOOTS Lnone/acf;
+	FIELD W CHAINMAIL_HELMET Lnone/acf;
+	FIELD X CHAINMAIL_CHESTPLATE Lnone/acf;
+	FIELD Y CHAINMAIL_LEGGINGS Lnone/acf;
+	FIELD Z CHAINMAIL_BOOTS Lnone/acf;
+	FIELD aA LAVA_BUCKET Lnone/adx;
+	FIELD aB MINECART Lnone/adx;
+	FIELD aC SADDLE Lnone/adx;
+	FIELD aD IRON_DOOR Lnone/adx;
+	FIELD aE REDSTONE Lnone/adx;
+	FIELD aF SNOWBALL Lnone/adx;
+	FIELD aG OAK_BOAT Lnone/adx;
+	FIELD aH SPRUCE_BOAT Lnone/adx;
+	FIELD aI BIRCH_BOAT Lnone/adx;
+	FIELD aJ JUGNLE_BOAT Lnone/adx;
+	FIELD aK ACACIA_BOAT Lnone/adx;
+	FIELD aL DARK_OAK_BOAT Lnone/adx;
+	FIELD a IRON_SHOVEL Lnone/adx;
+	FIELD aM LEATHER Lnone/adx;
+	FIELD aN MILK_BUCKET Lnone/adx;
+	FIELD aO BRICK Lnone/adx;
+	FIELD aP CLAY_BALL Lnone/adx;
+	FIELD aQ REEDS Lnone/adx;
+	FIELD aR PAPER Lnone/adx;
+	FIELD aS BOOK Lnone/adx;
+	FIELD aT SLIME_BALL Lnone/adx;
+	FIELD aU CHEST_MINECART Lnone/adx;
+	FIELD aV FURNACE_MINECART Lnone/adx;
+	FIELD aW EGG Lnone/adx;
+	FIELD aX COMPASS Lnone/adx;
+	FIELD aY FISHING_ROD Lnone/adr;
+	FIELD aZ CLOCK Lnone/adx;
+	FIELD aa IRON_HELMET Lnone/acf;
+	FIELD ab IRON_CHESTPLATE Lnone/acf;
+	FIELD ac IRON_LEGGINGS Lnone/acf;
+	FIELD ad IRON_BOOTS Lnone/acf;
+	FIELD ae DIAMOND_HELMET Lnone/acf;
+	FIELD af DIAMOND_CHESTPLATE Lnone/acf;
+	FIELD ag DIAMOND_LEGGINGS Lnone/acf;
+	FIELD ah DIAMOND_BOOTS Lnone/acf;
+	FIELD ai GOLDEN_HELMET Lnone/acf;
+	FIELD aj GOLDEN_CHESTPLATE Lnone/acf;
+	FIELD ak GOLDEN_LEGGINGS Lnone/acf;
+	FIELD al GOLDEN_BOOTS Lnone/acf;
+	FIELD am FLINT Lnone/adx;
+	FIELD an PORKCHOP Lnone/adx;
+	FIELD ao COOKED_PORKCHOP Lnone/adx;
+	FIELD ap PAINTING Lnone/adx;
+	FIELD aq GOLDEN_APPLE Lnone/adx;
+	FIELD ar SIGN Lnone/adx;
+	FIELD as OAK_DOOR Lnone/adx;
+	FIELD at SPRUCE_DOOR Lnone/adx;
+	FIELD au BIRCH_DOOR Lnone/adx;
+	FIELD av JUNGLE_DOOR Lnone/adx;
+	FIELD aw ACACIA_DOOR Lnone/adx;
+	FIELD ax DARK_OAK_DOOR Lnone/adx;
+	FIELD ay BUCKET Lnone/adx;
+	FIELD az WATER_BUCKET Lnone/adx;
+	FIELD bA ROTTEN_FLESH Lnone/adx;
+	FIELD bB ENDER_PEARL Lnone/adx;
+	FIELD bC BLAZE_ROD Lnone/adx;
+	FIELD bD GHAST_TEAR Lnone/adx;
+	FIELD bE GOLD_NUGGET Lnone/adx;
+	FIELD bF NETHER_WART Lnone/adx;
+	FIELD bG POTION Lnone/aem;
+	FIELD bH SPLASH_POTION Lnone/aem;
+	FIELD bI LINGERING_POTION Lnone/aem;
+	FIELD bJ GLASS_BOTTLE Lnone/adx;
+	FIELD bK DRAGON_BREATH Lnone/adx;
+	FIELD bL SPIDER_EYE Lnone/adx;
+	FIELD b IRON_PICKAXE Lnone/adx;
+	FIELD bM FERMENTED_SPIDER_EYE Lnone/adx;
+	FIELD bN BLAZE_POWDER Lnone/adx;
+	FIELD bO MAGMA_CREAM Lnone/adx;
+	FIELD bP BREWING_STAND Lnone/adx;
+	FIELD bQ CAULDRON Lnone/adx;
+	FIELD bR ENDER_EYE Lnone/adx;
+	FIELD bS SPECKLED_MELON Lnone/adx;
+	FIELD bT SPAWN_EGG Lnone/adx;
+	FIELD bU EXPERIENCE_BOTTLE Lnone/adx;
+	FIELD bV FIRE_CHARGE Lnone/adx;
+	FIELD bW WRITABLE_BOOK Lnone/adx;
+	FIELD bX WRITTEN_BOOK Lnone/adx;
+	FIELD bY EMERALD Lnone/adx;
+	FIELD bZ ITEM_FRAME Lnone/adx;
+	FIELD ba GLOWSTONE_DUST Lnone/adx;
+	FIELD bb FISH Lnone/adx;
+	FIELD bc COOKED_FISH Lnone/adx;
+	FIELD bd DYE Lnone/adx;
+	FIELD be BONE Lnone/adx;
+	FIELD bf SUGAR Lnone/adx;
+	FIELD bg CAKE Lnone/adx;
+	FIELD bh BED Lnone/adx;
+	FIELD bi REPEATER Lnone/adx;
+	FIELD bj COOKIE Lnone/adx;
+	FIELD bk FILLED_MAP Lnone/aef;
+	FIELD bl SHEARS Lnone/aeu;
+	FIELD bm MELON Lnone/adx;
+	FIELD bn PUMPKIN_SEEDS Lnone/adx;
+	FIELD bo MELON_SEEDS Lnone/adx;
+	FIELD bp BEEF Lnone/adx;
+	FIELD bq COOKED_BEEF Lnone/adx;
+	FIELD br CHICKEN Lnone/adx;
+	FIELD bs COOKED_CHICKEN Lnone/adx;
+	FIELD bt MUTTON Lnone/adx;
+	FIELD bu COOKED_MUTTON Lnone/adx;
+	FIELD bv RABBIT Lnone/adx;
+	FIELD bw COOKED_RABBIT Lnone/adx;
+	FIELD bx RABBIT_STEW Lnone/adx;
+	FIELD by RABBIT_FOOT Lnone/adx;
+	FIELD bz RABBIT_HIDE Lnone/adx;
+	FIELD cA RECORD_13 Lnone/adx;
+	FIELD cB RECORD_CAT Lnone/adx;
+	FIELD cC RECORD_BLOCKS Lnone/adx;
+	FIELD cD RECORD_CHIRP Lnone/adx;
+	FIELD cE RECORD_FAR Lnone/adx;
+	FIELD cF RECORD_MALL Lnone/adx;
+	FIELD cG RECORD_MELLOHI Lnone/adx;
+	FIELD cH RECORD_STAL Lnone/adx;
+	FIELD cI RECORD_STRAD Lnone/adx;
+	FIELD cJ RECORD_WARD Lnone/adx;
+	FIELD cK RECORD_11 Lnone/adx;
+	FIELD cL RECORD_WAIT Lnone/adx;
+	FIELD c IRON_AXE Lnone/adx;
+	FIELD cM PRISMARINE_SHARD Lnone/adx;
+	FIELD cN PRISMARINE_CRYSTALS Lnone/adx;
+	FIELD cO BANNER Lnone/adx;
+	FIELD cP END_CRYSTAL Lnone/adx;
+	FIELD cQ SHIELD Lnone/adx;
+	FIELD cR ELYTRA Lnone/adx;
+	FIELD cS CHORUS_FRUIT Lnone/adx;
+	FIELD cT CHORUS_FRUIT_POPPED Lnone/adx;
+	FIELD cU BEETROOT_SEEDS Lnone/adx;
+	FIELD cV BEETROOT Lnone/adx;
+	FIELD cW BEETROOT_SOUP Lnone/adx;
+	FIELD ca FLOWER_POT Lnone/adx;
+	FIELD cb CARROT Lnone/adx;
+	FIELD cc POTATO Lnone/adx;
+	FIELD cd BAKED_POTATO Lnone/adx;
+	FIELD ce POISONOUS_POTATO Lnone/adx;
+	FIELD cf EMPTY_MAP Lnone/adh;
+	FIELD cg GOLDEN_CARROT Lnone/adx;
+	FIELD ch SKULL Lnone/adx;
+	FIELD ci CARROT_ON_A_STICK Lnone/adx;
+	FIELD cj NETHER_STAR Lnone/adx;
+	FIELD ck PUMPKIN_PIE Lnone/adx;
+	FIELD cl FIREWORKS Lnone/adx;
+	FIELD cm FIREWORK_CHARGE Lnone/adx;
+	FIELD cn ENCHANTED_BOOK Lnone/adi;
+	FIELD co COMPARATOR Lnone/adx;
+	FIELD cp NETHERBRICK Lnone/adx;
+	FIELD cq QUARTZ Lnone/adx;
+	FIELD cr TNT_MINECART Lnone/adx;
+	FIELD cs HOPPER_MINECART Lnone/adx;
+	FIELD ct ARMOR_STAND Lnone/acg;
+	FIELD cu IRON_HORSE_ARMOR Lnone/adx;
+	FIELD cv GOLDEN_HORSE_ARMOR Lnone/adx;
+	FIELD cw DIAMOND_HORSE_ARMOR Lnone/adx;
+	FIELD cx LEAD Lnone/adx;
+	FIELD cy NAME_TAG Lnone/adx;
+	FIELD cz COMMAND_BLOCK_MINECART Lnone/adx;
+	FIELD d FLINT_AND_STEEL Lnone/adx;
+	FIELD e APPLE Lnone/adx;
+	FIELD f BOW Lnone/acq;
+	FIELD g ARROW Lnone/adx;
+	FIELD h SPECTRAL_ARROW Lnone/adx;
+	FIELD i TIPPED_ARROW Lnone/adx;
+	FIELD j COAL Lnone/adx;
+	FIELD k DIAMOND Lnone/adx;
+	FIELD l IRON_INGOT Lnone/adx;
+	FIELD m GOLD_INGOT Lnone/adx;
+	FIELD n IRON_SWORD Lnone/adx;
+	FIELD o WOODEN_SWORD Lnone/adx;
+	FIELD p WOODEN_SHOVEL Lnone/adx;
+	FIELD q WOODEN_PICKAXE Lnone/adx;
+	FIELD r WOODEN_AXE Lnone/adx;
+	FIELD s STONE_SWORD Lnone/adx;
+	FIELD t STONE_SHOVEL Lnone/adx;
+	FIELD u STONE_PICKAXE Lnone/adx;
+	FIELD v STONE_AXE Lnone/adx;
+	FIELD w DIAMOND_SWORD Lnone/adx;
+	FIELD x DIAMOND_SHOVEL Lnone/adx;
+	FIELD y DIAMOND_PICKAXE Lnone/adx;
+	FIELD z DIAMOND_AXE Lnone/adx;
+	METHOD a find (Ljava/lang/String;)Lnone/adx;
+		ARG 0 name
+CLASS none/aef net/minecraft/item/ItemFilledMap
+CLASS none/aem net/minecraft/item/ItemPotion
+CLASS none/aeu net/minecraft/item/ItemShears
+CLASS none/afs
+	METHOD a getSize ()I
+	METHOD b getResult ()Lnone/adz;
+CLASS none/aft
+	METHOD a register (Lnone/age;)V
+		ARG 0 manager
+CLASS none/afu
+	CLASS none/afu$a
+		METHOD a getSize ()I
+		METHOD b getResult ()Lnone/adz;
+	CLASS none/afu$b
+		METHOD a getSize ()I
+		METHOD b getResult ()Lnone/adz;
+CLASS none/afv
+	METHOD a getSize ()I
+	METHOD b getResult ()Lnone/adz;
+CLASS none/afw
+	METHOD a register (Lnone/age;)V
+		ARG 0 manager
+CLASS none/afx
+	METHOD a getSize ()I
+	METHOD b getResult ()Lnone/adz;
+CLASS none/afy
+	METHOD a register (Lnone/age;)V
+		ARG 0 manager
+CLASS none/aga
+	METHOD a getSize ()I
+	METHOD b getResult ()Lnone/adz;
+CLASS none/agc net/minecraft/crafting/RecipeStorage
+	FIELD a RECIPES [[Ljava/lang/Object;
+	METHOD a register (Lnone/age;)V
+		ARG 0 manager
+CLASS none/agd net/minecraft/crafting/IRecipe
+	METHOD a getSize ()I
+	METHOD b getResult ()Lnone/adz;
+CLASS none/age net/minecraft/crafting/CraftingManager
+	CLASS none/age$1
+		METHOD a compare (Lnone/agd;Lnone/agd;)I
+			ARG 0 recipe1
+			ARG 1 recipe2
+	FIELD a INSTANCE Lnone/age;
+	FIELD b recipes Ljava/util/List;
+	METHOD a getInstance ()Lnone/age;
+	METHOD a addShaped (Lnone/adz;[Ljava/lang/Object;)Lnone/agg;
+		ARG 0 result
+		ARG 1 args
+	METHOD a add (Lnone/agd;)V
+		ARG 0 recipe
+	METHOD b getRecipes ()Ljava/util/List;
+	METHOD b addShapeless (Lnone/adz;[Ljava/lang/Object;)V
+		ARG 0 result
+		ARG 1 args
+CLASS none/agf
+	METHOD a getSize ()I
+	METHOD b getResult ()Lnone/adz;
+CLASS none/agg net/minecraft/crafting/RecipeShaped
+	FIELD d result Lnone/adz;
+	METHOD <init> (II[Lnone/adz;Lnone/adz;)V
+		ARG 3 result
+	METHOD a getSize ()I
+	METHOD b getResult ()Lnone/adz;
+CLASS none/agh net/minecraft/crafting/RecipeShapeless
+	FIELD a result Lnone/adz;
+	FIELD b inputs Ljava/util/List;
+	METHOD <init> (Lnone/adz;Ljava/util/List;)V
+		ARG 0 result
+		ARG 1 inputs
+	METHOD a getSize ()I
+	METHOD b getResult ()Lnone/adz;
+CLASS none/agi
+	CLASS none/agi$a
+		METHOD a getSize ()I
+		METHOD b getResult ()Lnone/adz;
+CLASS none/agj
+	METHOD a register (Lnone/age;)V
+		ARG 0 manager
+CLASS none/agk
+	METHOD a getSize ()I
+	METHOD b getResult ()Lnone/adz;
+CLASS none/agl net/minecraft/crafting/RecipeTools
+	FIELD a PATTERNS [[Ljava/lang/String;
+	FIELD b ITEMS [[Ljava/lang/Object;
+	METHOD a register (Lnone/age;)V
+		ARG 0 manager
+CLASS none/agm net/minecraft/crafting/RecipeSwords
+	FIELD a PATTERNS [[Ljava/lang/String;
+	FIELD b ITEMS [[Ljava/lang/Object;
+	METHOD a register (Lnone/age;)V
+		ARG 0 manager
+CLASS none/ahs
+	FIELD a TIME_FORMAT Ljava/text/SimpleDateFormat;
+	FIELD b successCount I
+	FIELD c trackOutput Z
+	FIELD e command Ljava/lang/String;
+	FIELD f customName Ljava/lang/String;
+	METHOD a writeToNBT (Lnone/dr;)Lnone/dr;
+		ARG 0 tag
+	METHOD b (Lnone/dr;)V
+		ARG 0 tag
+CLASS none/akf net/minecraft/block/Block
+	FIELD h REGISTRY Lnone/cr;
+CLASS none/akg net/minecraft/block/Blocks
+	FIELD A SANDSTONE Lnone/akf;
+	FIELD B NOTEBLOCK Lnone/akf;
+	FIELD C BED Lnone/akf;
+	FIELD D GOLDEN_RAIL Lnone/akf;
+	FIELD E DETECTOR_RAIL Lnone/akf;
+	FIELD F STICKY_PISTON Lnone/arj;
+	FIELD G WEB Lnone/akf;
+	FIELD H TALLGRASS Lnone/apr;
+	FIELD I DEADBUSH Lnone/alc;
+	FIELD J PISTON Lnone/arj;
+	FIELD K PISTON_HEAD Lnone/ark;
+	FIELD L WOOL Lnone/akf;
+	FIELD M PISTON_EXTENSION Lnone/arl;
+	FIELD N YELLOW_FLOWER Lnone/alz;
+	FIELD O RED_FLOWER Lnone/alz;
+	FIELD P BROWN_MUSHROOM Lnone/akl;
+	FIELD Q RED_MUSHROOM Lnone/akl;
+	FIELD R GOLD_BLOCK Lnone/akf;
+	FIELD S IRON_BLOCK Lnone/akf;
+	FIELD T DOUBLE_STONE_SLAB Lnone/amm;
+	FIELD U STONE_SLAB Lnone/amm;
+	FIELD V BRICK_BLOCK Lnone/akf;
+	FIELD W TNT Lnone/akf;
+	FIELD X BOOKSHELF Lnone/akf;
+	FIELD Y MOSSY_COBBLESTONE Lnone/akf;
+	FIELD Z OBSIDIAN Lnone/akf;
+	FIELD aA IRON_DOOR Lnone/ali;
+	FIELD aB WOODEN_PRESSURE_PLATE Lnone/akf;
+	FIELD aC REDSTONE_ORE Lnone/akf;
+	FIELD aD LIT_REDSTONE_ORE Lnone/akf;
+	FIELD aE UNLIT_REDSTONE_TORCH Lnone/akf;
+	FIELD aF REDSTONE_TORCH Lnone/akf;
+	FIELD aG STONE_BUTTON Lnone/akf;
+	FIELD aH SNOW_LAYER Lnone/akf;
+	FIELD aI ICE Lnone/akf;
+	FIELD aJ SNOW Lnone/akf;
+	FIELD aK CACTUS Lnone/akn;
+	FIELD aL CLAY Lnone/akf;
+	FIELD a AIR Lnone/akf;
+	FIELD aM REEDS Lnone/aoo;
+	FIELD aN JUKEBOX Lnone/akf;
+	FIELD aO OAK_FENCE Lnone/akf;
+	FIELD aP SPRUCE_FENCE Lnone/akf;
+	FIELD aQ BIRCH_FENCE Lnone/akf;
+	FIELD aR JUNGLE_FENCE Lnone/akf;
+	FIELD aS DARK_OAK_FENCE Lnone/akf;
+	FIELD aT ACACIA_FENCE Lnone/akf;
+	FIELD aU PUMPKIN Lnone/akf;
+	FIELD aV NETHERRACK Lnone/akf;
+	FIELD aW SOUL_SAND Lnone/akf;
+	FIELD aX GLOWSTONE Lnone/akf;
+	FIELD aY PORTAL Lnone/any;
+	FIELD aZ LIT_PUMPKIN Lnone/akf;
+	FIELD aa TORCH Lnone/akf;
+	FIELD ab FIRE Lnone/aly;
+	FIELD ac MOB_SPAWNER Lnone/akf;
+	FIELD ad OAK_STAIRS Lnone/akf;
+	FIELD ae CHEST Lnone/akr;
+	FIELD af REDSTONE_WIRE Lnone/aol;
+	FIELD ag DIAMOND_ORE Lnone/akf;
+	FIELD ah DIAMOND_BLOCK Lnone/akf;
+	FIELD ai CRAFTING_TABLE Lnone/akf;
+	FIELD aj WHEAT Lnone/akf;
+	FIELD ak FARMLAND Lnone/akf;
+	FIELD al FURNACE Lnone/akf;
+	FIELD am LIT_FURNACE Lnone/akf;
+	FIELD an STANDING_SIGN Lnone/akf;
+	FIELD ao WOODEN_DOOR Lnone/ali;
+	FIELD ap SPRUCE_DOOR Lnone/ali;
+	FIELD aq BIRCH_DOOR Lnone/ali;
+	FIELD ar JUNGLE_DOOR Lnone/ali;
+	FIELD as ACACIA_DOOR Lnone/ali;
+	FIELD at DARK_OAK_DOOR Lnone/ali;
+	FIELD au LADDER Lnone/akf;
+	FIELD av RAIL Lnone/akf;
+	FIELD aw STONE_STAIRS Lnone/akf;
+	FIELD ax WALL_SIGN Lnone/akf;
+	FIELD ay LEVER Lnone/akf;
+	FIELD az STONE_PRESSURE_PLATE Lnone/akf;
+	FIELD bA NETHER_BRICK_STAIRS Lnone/akf;
+	FIELD bB NETHER_WART Lnone/akf;
+	FIELD bC ENCHANTING_TABLE Lnone/akf;
+	FIELD bD BREWING_STAND Lnone/akf;
+	FIELD bE CAULDRON Lnone/akq;
+	FIELD bF END_PORTAL Lnone/akf;
+	FIELD bG END_PORTAL_FRAME Lnone/akf;
+	FIELD bH END_STONE Lnone/akf;
+	FIELD bI DRAGON_EGG Lnone/akf;
+	FIELD bJ REDSTONE_LAMP Lnone/akf;
+	FIELD bK LIT_REDSTONE_LAMP Lnone/akf;
+	FIELD bL DOUBLE_WOODEN_SLAB Lnone/amm;
+	FIELD b STONE Lnone/akf;
+	FIELD bM WOODEN_SLAB Lnone/amm;
+	FIELD bN COCOA Lnone/akf;
+	FIELD bO SANDSTONE_STAIRS Lnone/akf;
+	FIELD bP EMERALD_ORE Lnone/akf;
+	FIELD bQ ENDER_CHEST Lnone/akf;
+	FIELD bR TRIPWIRE_HOOK Lnone/apx;
+	FIELD bS TRIPWIRE Lnone/akf;
+	FIELD bT EMERALD_BLOCK Lnone/akf;
+	FIELD bU SPRUCE_STAIRS Lnone/akf;
+	FIELD bV BIRCH_STAIRS Lnone/akf;
+	FIELD bW JUNGLE_STAIRS Lnone/akf;
+	FIELD bX COMMAND_BLOCK Lnone/akf;
+	FIELD bY BEACON Lnone/akc;
+	FIELD bZ COBBLESTONE_WALL Lnone/akf;
+	FIELD ba CAKE Lnone/akf;
+	FIELD bb UNPOWERED_REPEATER Lnone/aoq;
+	FIELD bc POWERED_REPEATER Lnone/aoq;
+	FIELD bd TRAPDOOR Lnone/akf;
+	FIELD be MONSTER_EGG Lnone/akf;
+	FIELD bf STONEBRICK Lnone/akf;
+	FIELD bg BROWN_MUSHROOM_BLOCK Lnone/akf;
+	FIELD bh RED_MUSHROOM_BLOCK Lnone/akf;
+	FIELD bi IRON_BARS Lnone/akf;
+	FIELD bj GLASS_PANE Lnone/akf;
+	FIELD bk MELON_BLOCK Lnone/akf;
+	FIELD bl PUMPKIN_STEM Lnone/akf;
+	FIELD bm MELON_STEM Lnone/akf;
+	FIELD bn VINE Lnone/akf;
+	FIELD bo FENCE_GATE Lnone/akf;
+	FIELD bp SPRUCE_FENCE_GATE Lnone/akf;
+	FIELD bq BIRCH_FENCE_GATE Lnone/akf;
+	FIELD br JUNGLE_FENCE_GATE Lnone/akf;
+	FIELD bs DARK_OAK_FENCE_GATE Lnone/akf;
+	FIELD bt ACACIA_FENCE_GATE Lnone/akf;
+	FIELD bu BRICK_STAIRS Lnone/akf;
+	FIELD bv STONE_BRICK_STAIRS Lnone/akf;
+	FIELD bw MYCELIUM Lnone/anj;
+	FIELD bx WATERLILY Lnone/akf;
+	FIELD by NETHER_BRICK Lnone/akf;
+	FIELD bz NETHER_BRICK_FENCE Lnone/akf;
+	FIELD cA COAL_BLOCK Lnone/akf;
+	FIELD cB PACKED_ICE Lnone/akf;
+	FIELD cC ACACIA_STAIRS Lnone/akf;
+	FIELD cD DARK_OAK_STAIRS Lnone/akf;
+	FIELD cE SLIME Lnone/akf;
+	FIELD cF DOUBLE_PLANT Lnone/alj;
+	FIELD cG STAINED_GLASS Lnone/apf;
+	FIELD cH STAINED_GLASS_PANE Lnone/apg;
+	FIELD cI PRISMARINE Lnone/akf;
+	FIELD cJ SEA_LANTERN Lnone/akf;
+	FIELD cK STANDING_BANNER Lnone/akf;
+	FIELD cL WALL_BANNER Lnone/akf;
+	FIELD c GRASS Lnone/ami;
+	FIELD cM RED_SANDSTONE Lnone/akf;
+	FIELD cN RED_SANDSTONE_STAIRS Lnone/akf;
+	FIELD cO DOUBLE_STONE_SLAB2 Lnone/amm;
+	FIELD cP STONE_SLAB2 Lnone/amm;
+	FIELD cQ END_ROD Lnone/akf;
+	FIELD cR CHORUS_PLANT Lnone/akf;
+	FIELD cS CHORUS_FLOWER Lnone/akf;
+	FIELD cT PURPUR_BLOCK Lnone/akf;
+	FIELD cU PURPUR_PILLAR Lnone/akf;
+	FIELD cV PURPUR_STAIRS Lnone/akf;
+	FIELD cW PURPUR_DOUBLE_SLAB Lnone/amm;
+	FIELD cX PURPUR_SLAB Lnone/amm;
+	FIELD cY END_BRICKS Lnone/akf;
+	FIELD cZ BEETROOTS Lnone/akf;
+	FIELD ca FLOWER_POT Lnone/akf;
+	FIELD cb CARROTS Lnone/akf;
+	FIELD cc POTATOES Lnone/akf;
+	FIELD cd WOODEN_BUTTON Lnone/akf;
+	FIELD ce SKULL Lnone/aoy;
+	FIELD cf ANVIL Lnone/akf;
+	FIELD cg TRAPPED_CHEST Lnone/akf;
+	FIELD ch LIGHT_WEIGHTED_PRESSURE_PLATE Lnone/akf;
+	FIELD ci HEAVY_WEIGHTED_PRESSURE_PLATE Lnone/akf;
+	FIELD cj UNPOWERED_COMPARATOR Lnone/aky;
+	FIELD ck POWERED_COMPARATOR Lnone/aky;
+	FIELD cl DAYLIGHT_DETECTOR Lnone/alb;
+	FIELD cm DAYLIGHT_DETECTOR_INVERTED Lnone/alb;
+	FIELD cn REDSTONE_BLOCK Lnone/akf;
+	FIELD co QUARTZ_ORE Lnone/akf;
+	FIELD cp HOPPER Lnone/ams;
+	FIELD cq QUARTZ_BLOCK Lnone/akf;
+	FIELD cr QUARTZ_STAIRS Lnone/akf;
+	FIELD cs ACTIVATOR_RAIL Lnone/akf;
+	FIELD ct DROPPER Lnone/akf;
+	FIELD cu STAINED_HARDENED_CLAY Lnone/akf;
+	FIELD cv BARRIER Lnone/akf;
+	FIELD cw IRON_TRAPDOOR Lnone/akf;
+	FIELD cx HAY_BLOCK Lnone/akf;
+	FIELD cy CARPET Lnone/akf;
+	FIELD cz HARDENED_CLAY Lnone/akf;
+	FIELD d DIRT Lnone/akf;
+	FIELD da GRASS_PATH Lnone/akf;
+	FIELD db END_GATEWAY Lnone/akf;
+	FIELD dc REPEATING_COMMAND_BLOCK Lnone/akf;
+	FIELD dd CHAIN_COMMAND_BLOCK Lnone/akf;
+	FIELD de FROSTED_ICE Lnone/akf;
+	FIELD df MAGMA Lnone/akf;
+	FIELD dg NETHER_WART_BLOCK Lnone/akf;
+	FIELD dh RED_NETHER_BRICK Lnone/akf;
+	FIELD di BONE_BLOCK Lnone/akf;
+	FIELD dj STRUCTURE_VOID Lnone/akf;
+	FIELD dk STRUCTURE_BLOCK Lnone/akf;
+	FIELD dl ALL_BLOCKS Ljava/util/Set;
+	FIELD e COBBLESTONE Lnone/akf;
+	FIELD f PLANKS Lnone/akf;
+	FIELD g SAPLING Lnone/akf;
+	FIELD h BEDROCK Lnone/akf;
+	FIELD i FLOWING_WATER Lnone/alm;
+	FIELD j WATER Lnone/apj;
+	FIELD k FLOWING_LAVA Lnone/alm;
+	FIELD l LAVA Lnone/apj;
+	FIELD m SAND Lnone/aot;
+	FIELD n GRAVEL Lnone/akf;
+	FIELD o GOLD_ORE Lnone/akf;
+	FIELD p IRON_ORE Lnone/akf;
+	FIELD q COAL_ORE Lnone/akf;
+	FIELD r LOG Lnone/akf;
+	FIELD s LOG2 Lnone/akf;
+	FIELD t LEAVES Lnone/amy;
+	FIELD u LEAVES2 Lnone/amy;
+	FIELD v SPONGE Lnone/akf;
+	FIELD w GLASS Lnone/akf;
+	FIELD x LAPIS_ORE Lnone/akf;
+	FIELD y LAPIS_BLOCK Lnone/akf;
+	FIELD z DISPENSER Lnone/akf;
+	METHOD a find (Ljava/lang/String;)Lnone/akf;
+		ARG 0 name
+CLASS none/amm net/minecraft/block/BlockSlab
+CLASS none/arp
+	METHOD a (Lnone/asi;)Lnone/ars;
+CLASS none/ars net/minecraft/block/state/IBlockState
+	METHOD a (Lnone/asi;)Lnone/ars;
+	METHOD r getProperties ()Ljava/util/Collection;
+	METHOD t getBlock ()Lnone/akf;
+CLASS none/art
+	CLASS none/art$a
+		METHOD r getProperties ()Ljava/util/Collection;
+		METHOD t getBlock ()Lnone/akf;
+CLASS none/asd
+	METHOD a getName ()Ljava/lang/String;
+	METHOD b getValueClass ()Ljava/lang/Class;
+CLASS none/ase
+	METHOD b getValue (Ljava/lang/String;)Lcom/google/common/base/Optional;
+	METHOD c getValues ()Ljava/util/Collection;
+CLASS none/asg
+	METHOD b getValue (Ljava/lang/String;)Lcom/google/common/base/Optional;
+	METHOD c getValues ()Ljava/util/Collection;
+CLASS none/ash
+	METHOD b getValue (Ljava/lang/String;)Lcom/google/common/base/Optional;
+	METHOD c getValues ()Ljava/util/Collection;
+CLASS none/asi net/minecraft/block/state/IProperty
+	METHOD a getName ()Ljava/lang/String;
+	METHOD b getValueClass ()Ljava/lang/Class;
+	METHOD b getValue (Ljava/lang/String;)Lcom/google/common/base/Optional;
+		ARG 0 name
+	METHOD c getValues ()Ljava/util/Collection;
+CLASS none/bcx net/minecraft/Minecraft
+	FIELD J LOGGER Lorg/apache/logging/log4j/Logger;
+	FIELD K SPLASH_TEXTURE Lnone/kn;
+CLASS none/bzx
+	METHOD b createMap ()Ljava/util/Map;
+CLASS net/minecraft/client/main/Main
+	METHOD main ([Ljava/lang/String;)V
+		ARG 0 args
+CLASS net/minecraft/server/MinecraftServer net/minecraft/server/MinecraftServer

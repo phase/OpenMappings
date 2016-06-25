@@ -31,7 +31,7 @@ CLASS none/a net/minecraft/util/TextFormatting
 		ARG 3 name
 	METHOD <init> (Ljava/lang/String;ILjava/lang/String;CZI)V
 		ARG 3 name
-CLASS none/b net/minecraft/crash/CrashReport
+CLASS none/b net/minecraft/util/crash/CrashReport
 	FIELD a LOGGER Lorg/apache/logging/log4j/Logger;
 	FIELD c cause Ljava/lang/Throwable;
 	FIELD h stackTrace [Ljava/lang/StackTraceElement;
@@ -39,7 +39,7 @@ CLASS none/b net/minecraft/crash/CrashReport
 		ARG 1 cause
 	METHOD a addElement (Ljava/lang/String;I)Lnone/c;
 	METHOD a create (Ljava/lang/Throwable;Ljava/lang/String;)Lnone/b;
-CLASS none/c net/minecraft/crash/CrashReportElement
+CLASS none/c net/minecraft/util/crash/CrashReportElement
 	CLASS none/c$a Element
 		FIELD a name Ljava/lang/String;
 		FIELD b value Ljava/lang/String;
@@ -56,7 +56,7 @@ CLASS none/c net/minecraft/crash/CrashReportElement
 		ARG 1 name
 	METHOD a addEntry (Ljava/lang/String;Ljava/lang/Object;)V
 	METHOD a addEntry (Ljava/lang/String;Lnone/d;)V
-CLASS none/d net/minecraft/crash/CrashReportEntry
+CLASS none/d net/minecraft/util/crash/CrashReportEntry
 CLASS none/h net/minecraft/util/Utilities
 	CLASS none/h$a OS
 		FIELD a LINUX Lnone/h$a;
@@ -561,10 +561,10 @@ CLASS none/dg net/minecraft/registry/Registry
 	METHOD d contains (Ljava/lang/Object;)Z
 		ARG 0 key
 	METHOD iterator iterator ()Ljava/util/Iterator;
-CLASS none/dp net/minecraft/nbt/TagByteArray
+CLASS none/dp net/minecraft/util/nbt/TagByteArray
 	METHOD a getType ()B
 	METHOD c getByteArray ()[B
-CLASS none/dq net/minecraft/nbt/TagByte
+CLASS none/dq net/minecraft/util/nbt/TagByte
 	METHOD a getType ()B
 	METHOD d getLong ()J
 	METHOD e getInteger ()I
@@ -572,7 +572,7 @@ CLASS none/dq net/minecraft/nbt/TagByte
 	METHOD g getByte ()B
 	METHOD h getDouble ()D
 	METHOD i getFloat ()F
-CLASS none/dr net/minecraft/nbt/TagCompound
+CLASS none/dr net/minecraft/util/nbt/TagCompound
 	CLASS none/dr$1
 		METHOD a getEntry ()Ljava/lang/String;
 	CLASS none/dr$2
@@ -667,7 +667,7 @@ CLASS none/dr net/minecraft/nbt/TagCompound
 		ARG 0 name
 	METHOD q remove (Ljava/lang/String;)V
 		ARG 0 name
-CLASS none/ds rnet/minecraft/nbt/TagDouble
+CLASS none/ds net/minecraft/util/nbt/TagDouble
 	METHOD a getType ()B
 	METHOD d getLong ()J
 	METHOD e getInteger ()I
@@ -677,7 +677,7 @@ CLASS none/ds rnet/minecraft/nbt/TagDouble
 	METHOD i getFloat ()F
 CLASS none/dt
 	METHOD a getType ()B
-CLASS none/du net/minecraft/nbt/TagFloat
+CLASS none/du net/minecraft/util/nbt/TagFloat
 	METHOD a getType ()B
 	METHOD d getLong ()J
 	METHOD e getInteger ()I
@@ -685,10 +685,10 @@ CLASS none/du net/minecraft/nbt/TagFloat
 	METHOD g getByte ()B
 	METHOD h getDouble ()D
 	METHOD i getFloat ()F
-CLASS none/dv net/minecraft/nbt/TagIntegerArray
+CLASS none/dv net/minecraft/util/nbt/TagIntegerArray
 	METHOD a getType ()B
 	METHOD d getIntegerArray ()[I
-CLASS none/dw net/minecraft/nbt/TagInteger
+CLASS none/dw net/minecraft/util/nbt/TagInteger
 	METHOD a getType ()B
 	METHOD d getLong ()J
 	METHOD e getInteger ()I
@@ -699,7 +699,7 @@ CLASS none/dw net/minecraft/nbt/TagInteger
 CLASS none/dx
 	METHOD a getType ()B
 	METHOD b_ isEmpty ()Z
-CLASS none/dy net/minecraft/nbt/TagLong
+CLASS none/dy net/minecraft/util/nbt/TagLong
 	METHOD a getType ()B
 	METHOD d getLong ()J
 	METHOD e getInteger ()I
@@ -714,7 +714,7 @@ CLASS none/ec
 	METHOD g getByte ()B
 	METHOD h getDouble ()D
 	METHOD i getFloat ()F
-CLASS none/ed net/minecraft/nbt/TagShort
+CLASS none/ed net/minecraft/util/nbt/TagShort
 	METHOD a getType ()B
 	METHOD d getLong ()J
 	METHOD e getInteger ()I
@@ -722,11 +722,11 @@ CLASS none/ed net/minecraft/nbt/TagShort
 	METHOD g getByte ()B
 	METHOD h getDouble ()D
 	METHOD i getFloat ()F
-CLASS none/ee net/minecraft/nbt/TagString
+CLASS none/ee net/minecraft/util/nbt/TagString
 	METHOD a getType ()B
 	METHOD b_ isEmpty ()Z
 	METHOD c_ getString ()Ljava/lang/String;
-CLASS none/ef net/minecaft/nbt/Tag
+CLASS none/ef net/minecraft/util/nbt/Tag
 	METHOD a getType ()B
 	METHOD b_ isEmpty ()Z
 	METHOD c_ getString ()Ljava/lang/String;

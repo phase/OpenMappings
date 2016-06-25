@@ -1,4 +1,4 @@
-CLASS none/a net/minecraft/util/TextFormat
+CLASS none/a net/minecraft/util/TextFormatting
 	FIELD B str Ljava/lang/String;
 	FIELD C name I
 	FIELD a BLACK Lnone/a;
@@ -37,6 +37,8 @@ CLASS none/b net/minecraft/crash/CrashReport
 	FIELD h stackTrace [Ljava/lang/StackTraceElement;
 	METHOD <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
 		ARG 1 cause
+	METHOD a addElement (Ljava/lang/String;I)Lnone/c;
+	METHOD a create (Ljava/lang/Throwable;Ljava/lang/String;)Lnone/b;
 CLASS none/c net/minecraft/crash/CrashReportElement
 	CLASS none/c$a Element
 		FIELD a name Ljava/lang/String;
@@ -52,6 +54,9 @@ CLASS none/c net/minecraft/crash/CrashReportElement
 	METHOD <init> (Lnone/b;Ljava/lang/String;)V
 		ARG 0 report
 		ARG 1 name
+	METHOD a addEntry (Ljava/lang/String;Ljava/lang/Object;)V
+	METHOD a addEntry (Ljava/lang/String;Lnone/d;)V
+CLASS none/d net/minecraft/crash/CrashReportEntry
 CLASS none/h net/minecraft/util/Utilities
 	CLASS none/h$a OS
 		FIELD a LINUX Lnone/h$a;
@@ -556,11 +561,22 @@ CLASS none/dg net/minecraft/registry/Registry
 	METHOD d contains (Ljava/lang/Object;)Z
 		ARG 0 key
 	METHOD iterator iterator ()Ljava/util/Iterator;
-CLASS none/dp
+CLASS none/dp net/minecraft/nbt/TagByteArray
 	METHOD a getType ()B
-CLASS none/dq
+	METHOD c getByteArray ()[B
+CLASS none/dq net/minecraft/nbt/TagByte
 	METHOD a getType ()B
+	METHOD d getLong ()J
+	METHOD e getInteger ()I
+	METHOD f getShort ()S
+	METHOD g getByte ()B
+	METHOD h getDouble ()D
+	METHOD i getFloat ()F
 CLASS none/dr net/minecraft/nbt/TagCompound
+	CLASS none/dr$1
+		METHOD a getEntry ()Ljava/lang/String;
+	CLASS none/dr$2
+		METHOD a getEntry ()Ljava/lang/String;
 	FIELD b map Ljava/util/Map;
 	METHOD a getType ()B
 	METHOD a read (BLjava/lang/String;Ljava/io/DataInput;ILnone/dz;)Lnone/ef;
@@ -571,43 +587,46 @@ CLASS none/dr net/minecraft/nbt/TagCompound
 		ARG 0 name
 	METHOD a setByte (Ljava/lang/String;B)V
 		ARG 0 name
-		ARG 1 val
+		ARG 1 value
 	METHOD a setDouble (Ljava/lang/String;D)V
 		ARG 0 name
-		ARG 1 val
+		ARG 1 value
 	METHOD a setFloat (Ljava/lang/String;F)V
 		ARG 0 name
-		ARG 1 val
-	METHOD a setInt (Ljava/lang/String;I)V
+		ARG 1 value
+	METHOD a setInteger (Ljava/lang/String;I)V
 		ARG 0 name
-		ARG 1 val
+		ARG 1 value
 	METHOD a createCrashReport (Ljava/lang/String;ILjava/lang/ClassCastException;)Lnone/b;
 		ARG 0 name
 		ARG 1 expectedType
 		ARG 2 ex
 	METHOD a setLong (Ljava/lang/String;J)V
 		ARG 0 name
-		ARG 1 val
+		ARG 1 value
 	METHOD a setString (Ljava/lang/String;Ljava/lang/String;)V
 		ARG 0 name
-		ARG 1 val
+		ARG 1 value
 	METHOD a setUUID (Ljava/lang/String;Ljava/util/UUID;)V
 		ARG 0 name
-		ARG 1 uuid
+		ARG 1 value
+	METHOD a setTag (Ljava/lang/String;Lnone/ef;)V
+		ARG 0 name
+		ARG 1 tag
 	METHOD a write (Ljava/lang/String;Lnone/ef;Ljava/io/DataOutput;)V
 		ARG 2 output
 	METHOD a setShort (Ljava/lang/String;S)V
 		ARG 0 name
-		ARG 1 val
+		ARG 1 value
 	METHOD a setBoolean (Ljava/lang/String;Z)V
 		ARG 0 name
-		ARG 1 val
+		ARG 1 value
 	METHOD a setByteArray (Ljava/lang/String;[B)V
 		ARG 0 name
-		ARG 1 val
-	METHOD a setIntArray (Ljava/lang/String;[I)V
+		ARG 1 value
+	METHOD a setIntegerArray (Ljava/lang/String;[I)V
 		ARG 0 name
-		ARG 1 val
+		ARG 1 value
 	METHOD b hasUUID (Ljava/lang/String;)Z
 		ARG 0 name
 	METHOD b hasTag (Ljava/lang/String;I)Z
@@ -615,7 +634,7 @@ CLASS none/dr net/minecraft/nbt/TagCompound
 		ARG 1 type
 	METHOD b_ isEmpty ()Z
 	METHOD c getKeys ()Ljava/util/Set;
-	METHOD c (Ljava/lang/String;)Lnone/ef;
+	METHOD c getTag (Ljava/lang/String;)Lnone/ef;
 		ARG 0 name
 	METHOD d getSize ()I
 	METHOD d getType (Ljava/lang/String;)B
@@ -628,16 +647,19 @@ CLASS none/dr net/minecraft/nbt/TagCompound
 		ARG 0 name
 	METHOD g getShort (Ljava/lang/String;)S
 		ARG 0 name
-	METHOD h getInt (Ljava/lang/String;)I
+	METHOD h getInteger (Ljava/lang/String;)I
 		ARG 0 name
 	METHOD i getLong (Ljava/lang/String;)J
 		ARG 0 name
 	METHOD j getFloat (Ljava/lang/String;)F
 		ARG 0 name
+	METHOD k getDouble (Ljava/lang/String;)D
+		ARG 0 name
 	METHOD l getString (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 name
 	METHOD m getByteArray (Ljava/lang/String;)[B
 		ARG 0 name
-	METHOD n getIntArray (Ljava/lang/String;)[I
+	METHOD n getIntegerArray (Ljava/lang/String;)[I
 		ARG 0 name
 	METHOD o getTagCompound (Ljava/lang/String;)Lnone/dr;
 		ARG 0 name
@@ -645,29 +667,69 @@ CLASS none/dr net/minecraft/nbt/TagCompound
 		ARG 0 name
 	METHOD q remove (Ljava/lang/String;)V
 		ARG 0 name
-CLASS none/ds
+CLASS none/ds rnet/minecraft/nbt/TagDouble
 	METHOD a getType ()B
+	METHOD d getLong ()J
+	METHOD e getInteger ()I
+	METHOD f getShort ()S
+	METHOD g getByte ()B
+	METHOD h getDouble ()D
+	METHOD i getFloat ()F
 CLASS none/dt
 	METHOD a getType ()B
-CLASS none/du
+CLASS none/du net/minecraft/nbt/TagFloat
 	METHOD a getType ()B
-CLASS none/dv
+	METHOD d getLong ()J
+	METHOD e getInteger ()I
+	METHOD f getShort ()S
+	METHOD g getByte ()B
+	METHOD h getDouble ()D
+	METHOD i getFloat ()F
+CLASS none/dv net/minecraft/nbt/TagIntegerArray
 	METHOD a getType ()B
-CLASS none/dw
+	METHOD d getIntegerArray ()[I
+CLASS none/dw net/minecraft/nbt/TagInteger
 	METHOD a getType ()B
+	METHOD d getLong ()J
+	METHOD e getInteger ()I
+	METHOD f getShort ()S
+	METHOD g getByte ()B
+	METHOD h getDouble ()D
+	METHOD i getFloat ()F
 CLASS none/dx
 	METHOD a getType ()B
 	METHOD b_ isEmpty ()Z
-CLASS none/dy
+CLASS none/dy net/minecraft/nbt/TagLong
 	METHOD a getType ()B
-CLASS none/ed
+	METHOD d getLong ()J
+	METHOD e getInteger ()I
+	METHOD f getShort ()S
+	METHOD g getByte ()B
+	METHOD h getDouble ()D
+	METHOD i getFloat ()F
+CLASS none/ec
+	METHOD d getLong ()J
+	METHOD e getInteger ()I
+	METHOD f getShort ()S
+	METHOD g getByte ()B
+	METHOD h getDouble ()D
+	METHOD i getFloat ()F
+CLASS none/ed net/minecraft/nbt/TagShort
 	METHOD a getType ()B
-CLASS none/ee
+	METHOD d getLong ()J
+	METHOD e getInteger ()I
+	METHOD f getShort ()S
+	METHOD g getByte ()B
+	METHOD h getDouble ()D
+	METHOD i getFloat ()F
+CLASS none/ee net/minecraft/nbt/TagString
 	METHOD a getType ()B
 	METHOD b_ isEmpty ()Z
-CLASS none/ef
+	METHOD c_ getString ()Ljava/lang/String;
+CLASS none/ef net/minecaft/nbt/Tag
 	METHOD a getType ()B
 	METHOD b_ isEmpty ()Z
+	METHOD c_ getString ()Ljava/lang/String;
 CLASS none/kn net/minecraft/util/Identifier
 	FIELD a domain Ljava/lang/String;
 	FIELD b name Ljava/lang/String;
@@ -696,6 +758,11 @@ CLASS none/za
 	FIELD j LOGGER Lorg/apache/logging/log4j/Logger;
 CLASS none/acf net/minecraft/item/ItemArmor
 CLASS none/acg net/minecraft/item/ItemArmorStand
+CLASS none/acl net/minecraft/item/ItemBlock
+	FIELD a block Lnone/akf;
+	METHOD <init> (Lnone/akf;)V
+		ARG 0 block
+	METHOD d getBlock ()Lnone/akf;
 CLASS none/acq net/minecraft/item/ItemBow
 CLASS none/adh net/minecraft/item/ItemEmptyMap
 CLASS none/adi net/minecraft/item/ItemEnchantedBook
@@ -1014,7 +1081,12 @@ CLASS none/ahs
 	METHOD b (Lnone/dr;)V
 		ARG 0 tag
 CLASS none/akf net/minecraft/block/Block
+	FIELD a identitier Lnone/kn;
 	FIELD h REGISTRY Lnone/cr;
+	METHOD a getBlock (Lnone/adx;)Lnone/akf;
+		ARG 0 item
+	METHOD a getBlockID (Lnone/akf;)I
+	METHOD b getBlock (I)Lnone/akf;
 CLASS none/akg net/minecraft/block/Blocks
 	FIELD A SANDSTONE Lnone/akf;
 	FIELD B NOTEBLOCK Lnone/akf;
@@ -1270,9 +1342,17 @@ CLASS none/asi net/minecraft/block/state/IProperty
 CLASS none/bcx net/minecraft/Minecraft
 	FIELD J LOGGER Lorg/apache/logging/log4j/Logger;
 	FIELD K SPLASH_TEXTURE Lnone/kn;
+	METHOD G shutdown ()V
+	METHOD I getTime ()J
+	METHOD a start ()V
 CLASS none/bzx
 	METHOD b createMap ()Ljava/util/Map;
-CLASS net/minecraft/client/main/Main
-	METHOD main ([Ljava/lang/String;)V
+CLASS net/minecraft/client/main/Main net/minecraft/client/main/Main
+	CLASS net/minecraft/client/main/Main$1
+		METHOD getPasswordAuthentication getPasswordAuthentication ()Ljava/net/PasswordAuthentication;
+	METHOD main main ([Ljava/lang/String;)V
 		ARG 0 args
 CLASS net/minecraft/server/MinecraftServer net/minecraft/server/MinecraftServer
+	FIELD k LOGGER Lorg/apache/logging/log4j/Logger;
+CLASS net/minecraft/client/ClientBrandRetriever net/minecraft/client/ClientBrand
+	METHOD getClientModName getBrand ()Ljava/lang/String;

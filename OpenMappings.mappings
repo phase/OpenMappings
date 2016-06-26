@@ -83,6 +83,8 @@ CLASS none/c net/minecraft/util/crash/CrashReportElement
 	METHOD a addEntry (Ljava/lang/String;Ljava/lang/Object;)V
 	METHOD a addEntry (Ljava/lang/String;Lnone/d;)V
 CLASS none/d net/minecraft/util/crash/CrashReportEntry
+CLASS none/f net/minecraft/util/ReportedException
+CLASS none/g net/minecraft/util/ChatCharacterChecker
 CLASS none/h net/minecraft/util/Utilities
 	CLASS none/h$a OS
 		FIELD a LINUX Lnone/h$a;
@@ -96,6 +98,8 @@ CLASS none/h net/minecraft/util/Utilities
 	METHOD a runTask (Ljava/util/concurrent/FutureTask;Lorg/apache/logging/log4j/Logger;)Ljava/lang/Object;
 		ARG 0 task
 		ARG 1 logger
+CLASS none/i net/minecraft/command/ICommandListener
+	METHOD a onCommand (Lnone/n;Lnone/l;ILjava/lang/String;[Ljava/lang/Object;)V
 CLASS none/j net/minecraft/command/Command
 	METHOD a getMinimumPermissionLevel ()I
 	METHOD a (Lcom/google/gson/JsonParseException;)Lnone/cf;
@@ -105,6 +109,7 @@ CLASS none/j net/minecraft/command/Command
 	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
 	METHOD a ([Ljava/lang/String;[Ljava/lang/String;)Ljava/util/List;
 	METHOD b getAliases ()Ljava/util/List;
+CLASS none/k net/minecraft/command/CommandHandler
 CLASS none/l net/minecraft/command/ICommand
 	METHOD a (Lnet/minecraft/server/MinecraftServer;Lnone/n;)Z
 		ARG 0 server
@@ -121,15 +126,16 @@ CLASS none/l net/minecraft/command/ICommand
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
 		ARG 0 user
 	METHOD c getName ()Ljava/lang/String;
+CLASS none/m net/minecraft/command/ICommandManager
 CLASS none/n net/minecraft/command/ICommandUser
-CLASS none/o
+CLASS none/o net/minecraft/command/CommandResultStats
 	METHOD a (Lnet/minecraft/server/MinecraftServer;Lnone/n;Lnone/o$a;I)V
 		ARG 0 server
 		ARG 1 user
-CLASS none/p
+CLASS none/p net/minecraft/command/EntitySelector
 	METHOD b (Lnone/n;Ljava/lang/String;)Lnone/ey;
 		ARG 0 user
-CLASS none/q
+CLASS none/q net/minecraft/command/server/CommandAchievement
 	METHOD a getMinimumPermissionLevel ()I
 	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
 	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
@@ -162,19 +168,19 @@ CLASS none/s net/minecraft/command/CommandBase
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
 		ARG 0 user
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/t
+CLASS none/t net/minecraft/command/CommandBlockData
 	METHOD a getMinimumPermissionLevel ()I
 	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
 	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/u
+CLASS none/u net/minecraft/command/CommandClearInventory
 	METHOD a getMinimumPermissionLevel ()I
 	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
 	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/v
+CLASS none/v net/minecraft/command/CommandClone
 	METHOD a getMinimumPermissionLevel ()I
 	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
 	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
@@ -193,19 +199,19 @@ CLASS none/w net/minecraft/command/CommandTestForBlocks
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
 		ARG 0 user
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/x
+CLASS none/x net/minecraft/command/server/CommandDeOp
 	METHOD a getMinimumPermissionLevel ()I
 	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
 	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/y
+CLASS none/y net/minecraft/command/CommandDebug
 	METHOD a getMinimumPermissionLevel ()I
 	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
 	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/z
+CLASS none/z net/minecraft/command/CommandDefaultGameMode
 	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
 		ARG 0 server
 		ARG 1 user
@@ -381,6 +387,8 @@ CLASS none/bc
 	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
 	METHOD c getName ()Ljava/lang/String;
+CLASS none/bd
+	METHOD a onCommand (Lnone/n;Lnone/l;ILjava/lang/String;[Ljava/lang/Object;)V
 CLASS none/be
 	METHOD a getMinimumPermissionLevel ()I
 	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
@@ -1428,6 +1436,18 @@ CLASS none/asi net/minecraft/block/state/IProperty
 	METHOD b getValue (Ljava/lang/String;)Lcom/google/common/base/Optional;
 		ARG 0 name
 	METHOD c getValues ()Ljava/util/Collection;
+CLASS none/aua net/minecraft/world/gen/MapGen
+CLASS none/awu net/minecraft/world/gen/structure/MapGenStructure
+CLASS none/axa net/minecraft/world/gen/structure/MapGenVillage
+CLASS none/axb net/minecraft/world/gen/structure/StructureVillagePieces
+CLASS none/axn net/minecraft/world/gen/OctaveNosieGenerator
+CLASS none/axo net/minecraft/world/gen/PerlinNoiseGenerator
+CLASS none/axr net/minecraft/world/gen/SimplexNoiseGenerator
+CLASS none/axs net/minecraft/world/gen/NoiseGenerator
+CLASS none/axu net/minecraft/block/material/LogicMaterial
+CLASS none/axv net/minecraft/block/material/TransparentMaterial
+CLASS none/axw net/minecraft/block/material/LiquidMaterial
+CLASS none/axx net/minecraft/block/material/Material
 CLASS none/axy net/minecraft/util/MapColor
 	FIELD L color I
 	FIELD M index I
@@ -1435,6 +1455,37 @@ CLASS none/axy net/minecraft/util/MapColor
 	METHOD <init> (II)V
 		ARG 0 index
 		ARG 1 color
+CLASS none/axz net/minecraft/block/material/PortalMaterial
+CLASS none/aya net/minecraft/block/material/PushReaction
+CLASS none/ayc net/minecraft/world/gen/layer/DeepOcean
+CLASS none/ayd net/minecraft/world/gen/layer/Edge
+CLASS none/aye net/minecraft/world/gen/layer/AddIsland
+CLASS none/ayf net/minecraft/world/gen/layer/AddMushroomIsland
+CLASS none/ayg net/minecraft/world/gen/layer/AddSnow
+CLASS none/ayh net/minecraft/world/gen/layer/BiomeEdge
+CLASS none/ayi net/minecraft/world/gen/layer/Biome
+CLASS none/ayk net/minecraft/world/gen/layer/FuzzyZoom
+CLASS none/aym net/minecraft/world/gen/layer/IntCache
+CLASS none/ayn net/minecraft/world/gen/layer/Island
+CLASS none/ayo net/minecraft/world/gen/layer/LayerGen
+CLASS none/ayp net/minecraft/world/gen/layer/RareBiome
+CLASS none/ayq net/minecraft/world/gen/layer/Hills
+CLASS none/ayr net/minecraft/world/gen/layer/RemoveOcean
+CLASS none/ays net/minecraft/world/gen/layer/RiverInit
+CLASS none/ayt net/minecraft/world/gen/layer/River
+CLASS none/ayu net/minecraft/world/gen/layer/RiverMix
+CLASS none/ayv net/minecraft/world/gen/layer/Shore
+CLASS none/ayw net/minecraft/world/gen/layer/Smooth
+CLASS none/aza net/minecraft/world/gen/layer/VoronoiZoom
+CLASS none/azb net/minecraft/world/gen/layer/Zoom
+CLASS none/aze net/minecraft/pathfinding/PathHeap
+CLASS none/azf net/minecraft/pathfinding/PathNodeType
+CLASS none/azg net/minecraft/pathfinding/PathPoint
+CLASS none/azh net/minecraft/pathfinding/NodeProcessor
+CLASS none/azi net/minecraft/pathfinding/Path
+CLASS none/azj net/minecraft/pathfinding/PathFinder
+CLASS none/azk net/minecraft/pathfinding/SwimNodeProcessor
+CLASS none/azl net/minecraft/pathfinding/WalkNodeProcessor
 CLASS none/bcx net/minecraft/Minecraft
 	FIELD J LOGGER Lorg/apache/logging/log4j/Logger;
 	FIELD K SPLASH_TEXTURE Lnone/kn;
@@ -1443,6 +1494,12 @@ CLASS none/bcx net/minecraft/Minecraft
 	METHOD a start ()V
 CLASS none/bzx
 	METHOD b createMap ()Ljava/util/Map;
+CLASS none/cab net/minecraft/client/renderer/Matrix4f
+CLASS none/cac net/minecraft/client/renderer/Vector3d
+	FIELD a x D
+	FIELD b y D
+	FIELD c z D
+CLASS none/caf net/minecraft/client/renderer/OpenGLHelper
 CLASS net/minecraft/client/main/Main net/minecraft/client/main/Main
 	CLASS net/minecraft/client/main/Main$1
 		METHOD getPasswordAuthentication getPasswordAuthentication ()Ljava/net/PasswordAuthentication;

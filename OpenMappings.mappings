@@ -1,4 +1,4 @@
-CLASS none/a net/minecraft/util/TextFormatting
+CLASS none/a net/minecraft/util/TextFormat
 	FIELD B str Ljava/lang/String;
 	FIELD C name I
 	FIELD a BLACK Lnone/a;
@@ -32,13 +32,39 @@ CLASS none/a net/minecraft/util/TextFormatting
 	METHOD <init> (Ljava/lang/String;ILjava/lang/String;CZI)V
 		ARG 3 name
 CLASS none/b net/minecraft/util/crash/CrashReport
+	CLASS none/b$1
+		METHOD a getEntry ()Ljava/lang/String;
+	CLASS none/b$2
+		METHOD a getEntry ()Ljava/lang/String;
+	CLASS none/b$3
+		METHOD a getEntry ()Ljava/lang/String;
+	CLASS none/b$4
+		METHOD a getEntry ()Ljava/lang/String;
+	CLASS none/b$5
+		METHOD a getEntry ()Ljava/lang/String;
+	CLASS none/b$6
+		METHOD a getEntry ()Ljava/lang/String;
+	CLASS none/b$7
+		METHOD a getEntry ()Ljava/lang/String;
 	FIELD a LOGGER Lorg/apache/logging/log4j/Logger;
+	FIELD b description Ljava/lang/String;
 	FIELD c cause Ljava/lang/Throwable;
+	FIELD d defaultElement Lnone/c;
+	FIELD e elements Ljava/util/List;
 	FIELD h stackTrace [Ljava/lang/StackTraceElement;
 	METHOD <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+		ARG 0 description
 		ARG 1 cause
+	METHOD a getDescription ()Ljava/lang/String;
+	METHOD a addElement (Ljava/lang/String;)Lnone/c;
 	METHOD a addElement (Ljava/lang/String;I)Lnone/c;
 	METHOD a create (Ljava/lang/Throwable;Ljava/lang/String;)Lnone/b;
+		ARG 0 cuse
+		ARG 1 description
+	METHOD b getCause ()Ljava/lang/Throwable;
+	METHOD g getDefaultElement ()Lnone/c;
+	METHOD h addDefaultEntries ()V
+	METHOD i getWittyComment ()Ljava/lang/String;
 CLASS none/c net/minecraft/util/crash/CrashReportElement
 	CLASS none/c$a Element
 		FIELD a name Ljava/lang/String;
@@ -513,6 +539,7 @@ CLASS none/cr net/minecraft/registry/DefaultedMappedRegistry
 	FIELD e defaultValue Ljava/lang/Object;
 	METHOD a get (I)Ljava/lang/Object;
 		ARG 0 id
+	METHOD a register (ILjava/lang/Object;Ljava/lang/Object;)V
 	METHOD a getID (Ljava/lang/Object;)I
 		ARG 0 value
 	METHOD a getRandom (Ljava/util/Random;)Ljava/lang/Object;
@@ -528,6 +555,7 @@ CLASS none/da net/minecraft/registry/BiRegistry
 	FIELD b map Ljava/util/Map;
 	METHOD a get (I)Ljava/lang/Object;
 		ARG 0 id
+	METHOD a register (ILjava/lang/Object;Ljava/lang/Object;)V
 	METHOD a getID (Ljava/lang/Object;)I
 		ARG 0 value
 	METHOD b createMap ()Ljava/util/Map;
@@ -756,19 +784,69 @@ CLASS none/yy
 		ARG 0 tag
 CLASS none/za
 	FIELD j LOGGER Lorg/apache/logging/log4j/Logger;
+CLASS none/aap
+	CLASS none/aap$b BoatType
+		FIELD a OAK Lnone/aap$b;
+		FIELD b SPRUCE Lnone/aap$b;
+		FIELD c BIRCH Lnone/aap$b;
+		FIELD d JUNGLE Lnone/aap$b;
+		FIELD e ACACIA Lnone/aap$b;
+		FIELD f DARK_OAK Lnone/aap$b;
+		FIELD g name Ljava/lang/String;
+		FIELD h index I
+		METHOD a getName ()Ljava/lang/String;
+		METHOD a getType (I)Lnone/aap$b;
+			ARG 0 index
+		METHOD a getType (Ljava/lang/String;)Lnone/aap$b;
+			ARG 0 nme
+		METHOD b getIndex ()I
+		METHOD values values ()[Lnone/aap$b;
+	METHOD j getItem ()Lnone/adx;
 CLASS none/acf net/minecraft/item/ItemArmor
+	CLASS none/acf$a ArmorType
+		FIELD a LEATHER Lnone/acf$a;
+		FIELD b CHAIN Lnone/acf$a;
+		FIELD c IRON Lnone/acf$a;
+		FIELD d GOLD Lnone/acf$a;
+		FIELD e DIAMOND Lnone/acf$a;
+		FIELD f name Ljava/lang/String;
+		METHOD <init> (Ljava/lang/String;ILjava/lang/String;I[IILnone/ni;F)V
+		METHOD c getMaterial ()Lnone/adx;
+		METHOD d getName ()Ljava/lang/String;
 CLASS none/acg net/minecraft/item/ItemArmorStand
 CLASS none/acl net/minecraft/item/ItemBlock
 	FIELD a block Lnone/akf;
 	METHOD <init> (Lnone/akf;)V
 		ARG 0 block
 	METHOD d getBlock ()Lnone/akf;
+CLASS none/acn net/minecraft/item/ItemBoat
 CLASS none/acq net/minecraft/item/ItemBow
 CLASS none/adh net/minecraft/item/ItemEmptyMap
 CLASS none/adi net/minecraft/item/ItemEnchantedBook
 CLASS none/adr net/minecraft/item/ItemFishingRod
 CLASS none/adx net/minecraft/item/Item
+	CLASS none/adx$a ToolType
+		FIELD a WOOD Lnone/adx$a;
+		FIELD b STONE Lnone/adx$a;
+		FIELD c IRON Lnone/adx$a;
+		FIELD d DIAMOND Lnone/adx$a;
+		FIELD e GOLD Lnone/adx$a;
+	FIELD a blockToItemMap Ljava/util/Map;
 	FIELD g REGISTRY Lnone/da;
+	METHOD a registerItem (ILjava/lang/String;Lnone/adx;)V
+		ARG 0 id
+		ARG 1 name
+		ARG 2 item
+	METHOD a registerItem (ILnone/kn;Lnone/adx;)V
+		ARG 0 id
+		ARG 1 name
+		ARG 2 item
+	METHOD a getItem (Lnone/akf;)Lnone/adx;
+	METHOD a registerItem (Lnone/akf;Lnone/adx;)V
+		ARG 0 block
+		ARG 1 item
+	METHOD b registerItem (Lnone/akf;)V
+		ARG 0 block
 CLASS none/adz net/minecraft/item/ItemStack
 CLASS none/aeb net/minecraft/item/Items
 	FIELD A STICK Lnone/adx;
@@ -980,7 +1058,9 @@ CLASS none/aeb net/minecraft/item/Items
 		ARG 0 name
 CLASS none/aef net/minecraft/item/ItemFilledMap
 CLASS none/aem net/minecraft/item/ItemPotion
+CLASS none/aeo net/minecraft/item/ItemRecord
 CLASS none/aeu net/minecraft/item/ItemShears
+CLASS none/afa net/minecraft/item/ItemSlab
 CLASS none/afs
 	METHOD a getSize ()I
 	METHOD b getResult ()Lnone/adz;
@@ -1311,6 +1391,15 @@ CLASS none/akg net/minecraft/block/Blocks
 	METHOD a find (Ljava/lang/String;)Lnone/akf;
 		ARG 0 name
 CLASS none/amm net/minecraft/block/BlockSlab
+CLASS none/anx net/minecraft/block/BlockLog
+	CLASS none/anx$a LogType
+		FIELD a OAK Lnone/anx$a;
+		FIELD b SPRUCE Lnone/anx$a;
+		FIELD c BIRCH Lnone/anx$a;
+		FIELD d JUNGLE Lnone/anx$a;
+		FIELD e ACACIA Lnone/anx$a;
+		FIELD f DARK_OAK Lnone/anx$a;
+		FIELD g VALUES [Lnone/anx$a;
 CLASS none/arp
 	METHOD a (Lnone/asi;)Lnone/ars;
 CLASS none/ars net/minecraft/block/state/IBlockState
@@ -1339,6 +1428,13 @@ CLASS none/asi net/minecraft/block/state/IProperty
 	METHOD b getValue (Ljava/lang/String;)Lcom/google/common/base/Optional;
 		ARG 0 name
 	METHOD c getValues ()Ljava/util/Collection;
+CLASS none/axy net/minecraft/util/MapColor
+	FIELD L color I
+	FIELD M index I
+	FIELD a VALUES [Lnone/axy;
+	METHOD <init> (II)V
+		ARG 0 index
+		ARG 1 color
 CLASS none/bcx net/minecraft/Minecraft
 	FIELD J LOGGER Lorg/apache/logging/log4j/Logger;
 	FIELD K SPLASH_TEXTURE Lnone/kn;

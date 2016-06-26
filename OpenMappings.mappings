@@ -221,25 +221,25 @@ CLASS none/z net/minecraft/command/CommandDefaultGameMode
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
 		ARG 0 user
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/aa
+CLASS none/aa net/minecraft/command/CommandEffect
 	METHOD a getMinimumPermissionLevel ()I
 	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
 	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ab
+CLASS none/ab net/minecraft/command/server/CommandEmote
 	METHOD a getMinimumPermissionLevel ()I
 	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
 	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ac
+CLASS none/ac net/minecraft/command/CommandEnchant
 	METHOD a getMinimumPermissionLevel ()I
 	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
 	METHOD a getTabCompletions (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;Lnone/cm;)Ljava/util/List;
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ad
+CLASS none/ad net/minecraft/command/CommandEntityData
 	METHOD a getMinimumPermissionLevel ()I
 	METHOD a execute (Lnet/minecraft/server/MinecraftServer;Lnone/n;[Ljava/lang/String;)V
 	METHOD b getHelp (Lnone/n;)Ljava/lang/String;
@@ -792,7 +792,21 @@ CLASS none/yy
 		ARG 0 tag
 CLASS none/za
 	FIELD j LOGGER Lorg/apache/logging/log4j/Logger;
-CLASS none/aap
+CLASS none/aaa net/minecraft/entity/projectile/EntityLargeFireball
+CLASS none/aab net/minecraft/entity/Projectile
+CLASS none/aac net/minecraft/entity/projectile/ProjectileHelper
+CLASS none/aad net/minecraft/entity/projectile/EntityShulkerBullet
+CLASS none/aae net/minecraft/entity/projectile/EntitySmallFireball
+CLASS none/aaf net/minecraft/entity/projectile/EntitySnowball
+CLASS none/aag net/minecraft/entity/projectile/EntitySpectralArrow
+CLASS none/aah net/minecraft/entity/projectile/EntityThrowable
+CLASS none/aai net/minecraft/entity/projectile/EntityEgg
+CLASS none/aaj net/minecraft/entity/item/EntityEnderPearl
+CLASS none/aak net/minecraft/entity/item/EntityExpBottle
+CLASS none/aal net/minecraft/entity/projectile/EntityPotion
+CLASS none/aam net/minecraft/entity/projectile/EntityTippedArrow
+CLASS none/aan net/minecraft/entity/projectile/EntityWitherSkull
+CLASS none/aap net/minecraft/entity/item/EntityBoat
 	CLASS none/aap$b BoatType
 		FIELD a OAK Lnone/aap$b;
 		FIELD b SPRUCE Lnone/aap$b;
@@ -810,6 +824,42 @@ CLASS none/aap
 		METHOD b getIndex ()I
 		METHOD values values ()[Lnone/aap$b;
 	METHOD j getItem ()Lnone/adx;
+CLASS none/aaq net/minecraft/entity/item/EntityMinecart
+CLASS none/aar net/minecraft/entity/item/EntityMinecartChest
+CLASS none/aas net/minecraft/entity/item/EntityMinecartCommandBlock
+CLASS none/aat net/minecraft/entity/item/EntityMinecartContainer
+CLASS none/aau net/minecraft/entity/item/EntityMinecartFurnace
+CLASS none/aav net/minecraft/entity/item/EntityMinecartHopper
+CLASS none/aaw net/minecraft/entity/item/EntityMinecartEmpty
+CLASS none/aax net/minecraft/entity/item/EntityMinecartMobSpawner
+CLASS none/aay net/minecraft/entity/item/EntityMinecartTNT
+CLASS none/abb net/minecraft/util/FoodStats
+CLASS none/abd net/minecraft/inventory/Container
+CLASS none/abe net/minecraft/inventory/AnimalChest
+CLASS none/abf net/minecraft/inventory/ContainerRepair
+CLASS none/abg net/minecraft/inventory/ContainerBeacon
+CLASS none/abh net/minecraft/inventory/ContainerBrewingStand
+CLASS none/abi net/minecraft/inventory/ClickType
+CLASS none/abj net/minecraft/inventory/IContainerListener
+CLASS none/abk net/minecraft/inventory/ContainerChest
+CLASS none/abl net/minecraft/inventory/InventoryCrafting
+CLASS none/abm net/minecraft/inventory/ContainerWorkbench
+CLASS none/abn net/minecraft/inventory/ContainerDispenser
+CLASS none/abo net/minecraft/inventory/ContainerEnchantment
+CLASS none/abp net/minecraft/inventory/SlotFurnaceFuel
+CLASS none/abq net/minecraft/inventory/ContainerFurnace
+CLASS none/abr net/minecraft/inventory/SlotFurnaceOutput
+CLASS none/abs net/minecraft/inventory/ContainerHopper
+CLASS none/abt net/minecraft/inventory/ContainerHorseInventory
+CLASS none/abu net/minecraft/inventory/ContainerPlayer
+CLASS none/abw net/minecraft/inventory/InventoryMerchant
+CLASS none/abx net/minecraft/inventory/ContainerMerchant
+CLASS none/aby net/minecraft/inventory/SlotMerchantResult
+CLASS none/abz net/minecraft/inventory/InventoryEnderChest
+CLASS none/aca net/minecraft/inventory/InventoryCraftResult
+CLASS none/acb net/minecraft/inventory/SlotCrafting
+CLASS none/acc net/minecraft/inventory/Slot
+CLASS none/ace net/minecraft/item/ItemAnvilBlock
 CLASS none/acf net/minecraft/item/ItemArmor
 	CLASS none/acf$a ArmorType
 		FIELD a LEATHER Lnone/acf$a;
@@ -822,16 +872,52 @@ CLASS none/acf net/minecraft/item/ItemArmor
 		METHOD c getMaterial ()Lnone/adx;
 		METHOD d getName ()Ljava/lang/String;
 CLASS none/acg net/minecraft/item/ItemArmorStand
+CLASS none/ach net/minecraft/item/ItemArrow
+CLASS none/aci net/minecraft/item/ItemAxe
+CLASS none/acj net/minecraft/item/ItemBanner
+CLASS none/ack net/minecraft/item/ItemBed
 CLASS none/acl net/minecraft/item/ItemBlock
 	FIELD a block Lnone/akf;
 	METHOD <init> (Lnone/akf;)V
 		ARG 0 block
 	METHOD d getBlock ()Lnone/akf;
+CLASS none/acm net/minecraft/item/ItemBlockSpecial
 CLASS none/acn net/minecraft/item/ItemBoat
+CLASS none/aco net/minecraft/item/ItemBook
+CLASS none/acp net/minecraft/item/ItemGlassBottle
 CLASS none/acq net/minecraft/item/ItemBow
+CLASS none/acr net/minecraft/item/ItemSoup
+CLASS none/acs net/minecraft/item/ItemBucket
+CLASS none/act net/minecraft/item/ItemCarrotOnAStick
+CLASS none/acu net/minecraft/item/ItemChorusFruit
+CLASS none/acv net/minecraft/item/ItemClock
+CLASS none/acw net/minecraft/item/ItemCoal
+CLASS none/acx net/minecraft/item/ItemCompass
+CLASS none/acy net/minecraft/item/ItemMapBase
+CLASS none/acz net/minecraft/creativetab/CreativeTabs
+CLASS none/ada net/minecraft/item/ItemTool
+CLASS none/adb net/minecraft/item/ItemDoor
+CLASS none/adc net/minecraft/item/EnumDyeColor
+CLASS none/add net/minecraft/item/ItemDye
+CLASS none/ade net/minecraft/item/ItemCloth
+CLASS none/adf net/minecraft/item/ItemEgg
+CLASS none/adg net/minecraft/item/ItemElytra
 CLASS none/adh net/minecraft/item/ItemEmptyMap
 CLASS none/adi net/minecraft/item/ItemEnchantedBook
+CLASS none/adj net/minecraft/item/ItemEndCrystal
+CLASS none/adk net/minecraft/item/ItemEnderEye
+CLASS none/adl net/minecraft/item/ItemEnderPearl
+CLASS none/adm net/minecraft/item/ItemExpBottle
+CLASS none/adn net/minecraft/item/ItemFireball
+CLASS none/ado net/minecraft/item/ItemFireworkCharge
+CLASS none/adp net/minecraft/item/ItemFirework
+CLASS none/adq net/minecraft/item/ItemFishFood
 CLASS none/adr net/minecraft/item/ItemFishingRod
+CLASS none/ads net/minecraft/item/ItemFlintAndSteel
+CLASS none/adt net/minecraft/item/ItemFood
+CLASS none/adu net/minecraft/item/ItemAppleGold
+CLASS none/adv net/minecraft/item/ItemHangingEntity
+CLASS none/adw net/minecraft/item/ItemHoe
 CLASS none/adx net/minecraft/item/Item
 	CLASS none/adx$a ToolType
 		FIELD a WOOD Lnone/adx$a;
@@ -855,7 +941,9 @@ CLASS none/adx net/minecraft/item/Item
 		ARG 1 item
 	METHOD b registerItem (Lnone/akf;)V
 		ARG 0 block
+CLASS none/ady net/minecraft/util/CooldownTracker
 CLASS none/adz net/minecraft/item/ItemStack
+CLASS none/aea net/minecraft/item/ItemPropertyGetter
 CLASS none/aeb net/minecraft/item/Items
 	FIELD A STICK Lnone/adx;
 	FIELD B BOWL Lnone/adx;
@@ -1064,44 +1152,82 @@ CLASS none/aeb net/minecraft/item/Items
 	FIELD z DIAMOND_AXE Lnone/adx;
 	METHOD a find (Ljava/lang/String;)Lnone/adx;
 		ARG 0 name
+CLASS none/aec net/minecraft/item/ItemLead
+CLASS none/aed net/minecraft/item/ItemLeaves
+CLASS none/aee net/minecraft/item/ItemLingeringPotion
 CLASS none/aef net/minecraft/item/ItemFilledMap
+CLASS none/aeg net/minecraft/item/ItemBucketMilk
+CLASS none/aeh net/minecraft/item/ItemMinecart
+CLASS none/aei net/minecraft/item/ItemMultiTexture
+CLASS none/aej net/minecraft/item/ItemNameTag
+CLASS none/aek net/minecraft/item/ItemPickaxe
+CLASS none/ael net/minecraft/item/ItemPiston
 CLASS none/aem net/minecraft/item/ItemPotion
+CLASS none/aen net/minecraft/item/EnumRarity
 CLASS none/aeo net/minecraft/item/ItemRecord
+CLASS none/aep net/minecraft/item/ItemRedstone
+CLASS none/aeq net/minecraft/item/ItemSaddle
+CLASS none/aer net/minecraft/item/ItemSeedFood
+CLASS none/aes net/minecraft/item/ItemSeeds
+CLASS none/aet net/minecraft/util/CooldownTrackerServer
 CLASS none/aeu net/minecraft/item/ItemShears
+CLASS none/aev net/minecraft/item/ItemShield
+CLASS none/aew net/minecraft/item/ItemSpade
+CLASS none/aex net/minecraft/item/ItemSign
+CLASS none/aey net/minecraft/item/ItemSimpleFoiled
+CLASS none/aez net/minecraft/item/ItemSkull
 CLASS none/afa net/minecraft/item/ItemSlab
-CLASS none/afs
+CLASS none/afb net/minecraft/item/ItemSnow
+CLASS none/afc net/minecraft/item/ItemSnowball
+CLASS none/afd net/minecraft/item/ItemMonsterPlacer
+CLASS none/afe net/minecraft/item/ItemSpectralArrow
+CLASS none/aff net/minecraft/item/ItemSplashPotion
+CLASS none/afg net/minecraft/item/ItemSword
+CLASS none/afh net/minecraft/item/ItemColored
+CLASS none/afi net/minecraft/item/ItemTippedArrow
+CLASS none/afj net/minecraft/item/EnumAction
+CLASS none/afk net/minecraft/item/ItemLilyPad
+CLASS none/afl net/minecraft/item/ItemWritableBook
+CLASS none/afm net/minecraft/item/ItemWrittenBook
+CLASS none/afn net/minecraft/potion/PotionType
+CLASS none/afo net/minecraft/potion/PotionHelper
+CLASS none/afp net/minecraft/potion/PotionUtils
+CLASS none/afq net/minecraft/init/PotionTypes
+CLASS none/afs net/minecraft/item/crafting/RecipesArmorDyes
 	METHOD a getSize ()I
 	METHOD b getResult ()Lnone/adz;
-CLASS none/aft
+CLASS none/aft net/minecraft/item/crafting/RecipesArmor
 	METHOD a register (Lnone/age;)V
 		ARG 0 manager
-CLASS none/afu
+CLASS none/afu net/minecraft/item/crafting/RecipesBanners
 	CLASS none/afu$a
 		METHOD a getSize ()I
 		METHOD b getResult ()Lnone/adz;
 	CLASS none/afu$b
 		METHOD a getSize ()I
 		METHOD b getResult ()Lnone/adz;
-CLASS none/afv
+CLASS none/afv net/minecraft/item/crafting/RecipeBookCloning
 	METHOD a getSize ()I
 	METHOD b getResult ()Lnone/adz;
-CLASS none/afw
+CLASS none/afw net/minecraft/item/crafting/RecipesDyes
 	METHOD a register (Lnone/age;)V
 		ARG 0 manager
-CLASS none/afx
+CLASS none/afx net/minecraft/item/crafting/RecipeFireworks
 	METHOD a getSize ()I
 	METHOD b getResult ()Lnone/adz;
-CLASS none/afy
+CLASS none/afy net/minecraft/item/crafting/RecipesFood
 	METHOD a register (Lnone/age;)V
 		ARG 0 manager
-CLASS none/aga
+CLASS none/afz net/minecraft/item/crafting/FurnaceRecipes
+CLASS none/aga net/minecraft/item/crafting/RecipesMapCloning
 	METHOD a getSize ()I
 	METHOD b getResult ()Lnone/adz;
+CLASS none/agb net/minecraft/item/crafting/RecipesMapExtending
 CLASS none/agc net/minecraft/crafting/RecipeStorage
 	FIELD a RECIPES [[Ljava/lang/Object;
 	METHOD a register (Lnone/age;)V
 		ARG 0 manager
-CLASS none/agd net/minecraft/crafting/IRecipe
+CLASS none/agd net/minecraft/crafting/Recipe
 	METHOD a getSize ()I
 	METHOD b getResult ()Lnone/adz;
 CLASS none/age net/minecraft/crafting/CraftingManager
@@ -1121,7 +1247,7 @@ CLASS none/age net/minecraft/crafting/CraftingManager
 	METHOD b addShapeless (Lnone/adz;[Ljava/lang/Object;)V
 		ARG 0 result
 		ARG 1 args
-CLASS none/agf
+CLASS none/agf net/minecraft/item/crafting/RecipeRepairItem
 	METHOD a getSize ()I
 	METHOD b getResult ()Lnone/adz;
 CLASS none/agg net/minecraft/crafting/RecipeShaped
@@ -1138,14 +1264,14 @@ CLASS none/agh net/minecraft/crafting/RecipeShapeless
 		ARG 1 inputs
 	METHOD a getSize ()I
 	METHOD b getResult ()Lnone/adz;
-CLASS none/agi
+CLASS none/agi net/minecraft/item/crafting/ShieldRecipes
 	CLASS none/agi$a
 		METHOD a getSize ()I
 		METHOD b getResult ()Lnone/adz;
-CLASS none/agj
+CLASS none/agj net/minecraft/item/crafting/RecipesCrafting
 	METHOD a register (Lnone/age;)V
 		ARG 0 manager
-CLASS none/agk
+CLASS none/agk net/minecraft/item/crafting/RecipeTippedArrow
 	METHOD a getSize ()I
 	METHOD b getResult ()Lnone/adz;
 CLASS none/agl net/minecraft/crafting/RecipeTools
@@ -1158,6 +1284,33 @@ CLASS none/agm net/minecraft/crafting/RecipeSwords
 	FIELD b ITEMS [[Ljava/lang/Object;
 	METHOD a register (Lnone/age;)V
 		ARG 0 manager
+CLASS none/ago net/minecraft/enchantment/EnchantmentArrowDamage
+CLASS none/agp net/minecraft/enchantment/EnchantmentArrowFire
+CLASS none/agq net/minecraft/enchantment/EnchantmentArrowInfinite
+CLASS none/agr net/minecraft/enchantment/EnchantmentArrowKnockback
+CLASS none/ags net/minecraft/enchantment/EnchantmentDamage
+CLASS none/agt net/minecraft/enchantment/EnchantmentDurability
+CLASS none/agu net/minecraft/enchantment/EnchantmentDigging
+CLASS none/agv net/minecraft/enchantment/Enchantment
+CLASS none/agw net/minecraft/enchantment/EnumEnchantmentType
+CLASS none/agx net/minecraft/enchantment/EnchantmentHelper
+CLASS none/agy net/minecraft/enchantment/EnchantmentData
+CLASS none/agz net/minecraft/init/Enchantments
+CLASS none/aha net/minecraft/enchantment/EnchantmentFireAspect
+CLASS none/ahb net/minecraft/enchantment/EnchantmentFishingSpeed
+CLASS none/ahc net/minecraft/enchantment/EnchantmentFrostWalker
+CLASS none/ahd net/minecraft/enchantment/EnchantmentKnockback
+CLASS none/ahe net/minecraft/enchantment/EnchantmentLootBonus
+CLASS none/ahf net/minecraft/enchantment/EnchantmentMending
+CLASS none/ahg net/minecraft/enchantment/EnchantmentOxygen
+CLASS none/ahh net/minecraft/enchantment/EnchantmentProtection
+CLASS none/ahi net/minecraft/enchantment/EnchantmentThorns
+CLASS none/ahj net/minecraft/enchantment/EnchantmentUntouching
+CLASS none/ahk net/minecraft/enchantment/EnchantmentWaterWalker
+CLASS none/ahl net/minecraft/enchantment/EnchantmentWaterWorker
+CLASS none/aho net/minecraft/entity/Merchant
+CLASS none/ahp net/minecraft/village/MerchantRecipe
+CLASS none/ahq net/minecraft/village/MerchantRecipeList
 CLASS none/ahs
 	FIELD a TIME_FORMAT Ljava/text/SimpleDateFormat;
 	FIELD b successCount I
@@ -1168,6 +1321,69 @@ CLASS none/ahs
 		ARG 0 tag
 	METHOD b (Lnone/dr;)V
 		ARG 0 tag
+CLASS none/aht net/minecraft/tileentity/MobSpawnerBaseLogic
+CLASS none/ahu net/minecraft/block/BlockEventData
+CLASS none/ahv net/minecraft/util/BlockRenderLayer
+CLASS none/ahw net/minecraft/util/math/ChunkPos
+CLASS none/ahy net/minecraft/world/Explosion
+CLASS none/ahz net/minecraft/world/ColorizerFoliage
+CLASS none/aia net/minecraft/world/GameRules
+CLASS none/aib net/minecraft/world/GameType
+CLASS none/aic net/minecraft/world/ColorizerGrass
+CLASS none/aid net/minecraft/world/World
+CLASS none/aie net/minecraft/world/MinecraftException
+CLASS none/aif net/minecraft/world/WorldEventListener
+CLASS none/aig net/minecraft/world/WorldSettings
+CLASS none/aih net/minecraft/world/IBlockAccess
+CLASS none/aii net/minecraft/world/WorldType
+CLASS none/aij net/minecraft/world/EnumSkyBlock
+CLASS none/aik net/minecraft/world/WorldEntitySpawner
+CLASS none/ail net/minecraft/world/Teleporter
+CLASS none/aim net/minecraft/world/ChunkCache
+CLASS none/ain net/minecraft/util/WeightedSpawnerEntity
+CLASS none/aio net/minecraft/world/NextTickListEntry
+CLASS none/aip net/minecraft/world/biome/BiomeBeach
+CLASS none/aiq net/minecraft/world/biome/Biome
+CLASS none/air net/minecraft/world/biome/BiomeCache
+CLASS none/ais net/minecraft/world/biome/BiomeColorHelper
+CLASS none/ait net/minecraft/world/biome/BiomeDecorator
+CLASS none/aiu net/minecraft/world/biome/BiomeProvider
+CLASS none/aiv net/minecraft/init/Biomes
+CLASS none/aix net/minecraft/world/biome/BiomeDesert
+CLASS none/aiy net/minecraft/world/biome/BiomeHills
+CLASS none/aiz net/minecraft/world/biome/BiomeProviderSingle
+CLASS none/aj net/minecraft/command/CommandGameRule
+CLASS none/aja net/minecraft/world/biome/BiomeForest
+CLASS none/ajb net/minecraft/world/biome/BiomeHell
+CLASS none/ajc net/minecraft/world/biome/BiomeHellDecorator
+CLASS none/ajd net/minecraft/world/biome/BiomeSnow
+CLASS none/aje net/minecraft/world/biome/BiomeJungle
+CLASS none/ajf net/minecraft/world/biome/BiomeMesa
+CLASS none/ajg net/minecraft/world/biome/BiomeMushroomIsland
+CLASS none/ajh net/minecraft/world/biome/BiomeForestMutated
+CLASS none/aji net/minecraft/world/biome/BiomeSavannaMutated
+CLASS none/ajj net/minecraft/world/biome/BiomeOcean
+CLASS none/ajk net/minecraft/world/biome/BiomePlains
+CLASS none/ajl net/minecraft/world/biome/BiomeRiver
+CLASS none/ajm net/minecraft/world/biome/BiomeSavanna
+CLASS none/ajn net/minecraft/world/biome/BiomeStoneBeach
+CLASS none/ajo net/minecraft/world/biome/BiomeSwamp
+CLASS none/ajp net/minecraft/world/biome/BiomeTaiga
+CLASS none/ajq net/minecraft/world/biome/BiomeEnd
+CLASS none/ajr net/minecraft/world/biome/BiomeEndDecorator
+CLASS none/ajs net/minecraft/world/biome/BiomeVoid
+CLASS none/ajt net/minecraft/world/biome/BiomeVoidDecorator
+CLASS none/ajv net/minecraft/block/BlockAir
+CLASS none/ajw net/minecraft/block/BlockAnvil
+CLASS none/ajx net/minecraft/block/BlockBanner
+CLASS none/ajy net/minecraft/block/BlockBarrier
+CLASS none/ajz net/minecraft/block/BlockContainer
+CLASS none/ak net/minecraft/command/CommandGive
+CLASS none/aka net/minecraft/block/BlockBasePressurePlate
+CLASS none/akb net/minecraft/block/BlockRailBase
+CLASS none/akc net/minecraft/block/BlockBeacon
+CLASS none/akd net/minecraft/block/BlockBed
+CLASS none/ake net/minecraft/block/BlockBeetroot
 CLASS none/akf net/minecraft/block/Block
 	FIELD a identitier Lnone/kn;
 	FIELD h REGISTRY Lnone/cr;
